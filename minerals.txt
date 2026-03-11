@@ -1,0 +1,85 @@
+Quartz — SiO₂
+Opal — SiO₂·nH₂O
+Scapolite — 
+Nepheline — (Na,K)AlSiO₄
+Sodalite — Na₈(AlSiO₄)₆Cl₂
+Stilbite — CaAl₂Si₇O₁₈·7H₂O
+Plagioclase — (Na,Ca)(Si,Al)₄O₈
+Anorthite — CaAl₂Si₂O₈
+Albite — NaAlSi₃O₈
+Microcline — KAlSi₃O₈
+Orthoclase — KAlSi₃O₈
+Sanidine — KAlSi₃O₈
+Kaolinite — Al₂Si₂O₅(OH)₄
+Serpentine — Mg₃Si₂O₅(OH)₄
+Talc — Mg₃Si₄O₁₀(OH)₂
+Muscovite — KAl₂Si₃AlO₁₀(OH)₂
+Biotite — K(Mg,Fe)₃Si₃AlO₁₀(OH)₂
+Lepidolite - 
+Chlorite — (Mg,Fe)₆(Si,Al)₄O₁₀(OH)₈
+Spodumene -
+Tremolite — Ca₂Mg₅Si₈O₂₂(OH)₂
+Actinolite — Ca₂Fe₅Si₈O₂₂(OH)₂
+Hornblende — 
+Enstatite — (Mg,Fe)₂Si₂O₆
+Diopside — CaMgSi₂O₆
+Augite — 
+Wollastonite — Ca₂Si₂O₆
+Beryl — Be₃Al₂Si₆O₁₈
+Tourmaline —
+Epidote — 
+Olivine — (Mg,Fe)₂SiO₄
+Andalusite — Al₂SiO₅
+Kyanite — Al₂SiO₅
+Sillimanite — Al₂SiO₅
+Staurolite — 
+Zircon — ZrSiO₄
+Titanite — CaTiSiO₅
+Garnet — A₃B₂(SiO₄)₃
+Calcite — CaCO₃
+Aragonite — CaCO₃
+Magnesite — MgCO₃
+Dolomite — (Ca,Mg)CO₃
+Rhodochrosite — MnCO₃
+Siderite — FeCO₃
+Malachite — Cu₂CO₃(OH)₂
+Azurite — Cu₃(CO₃)₂(OH)₂
+Barite — BaSO₄
+Celestite — SrSO₄
+Anhydrite — CaSO₄
+Gypsum — CaSO₄·2H₂O
+Scheelite — CaWO₄
+Apatite — Ca₅(PO₄)₃(OH,F,Cl)
+Halite — NaCl
+Sylvite — KCl
+Fluorite — CaF₂
+Corundum — Al₂O₃
+Hematite — Fe₂O₃
+Ilmenite — FeTiO₃
+Spinel — (Mg,Fe,Zn)Al₂O₄
+Chromite — FeCr₂O₄
+Rutile — TiO₂
+Magnetite — Fe₃O₄
+Cassiterite — SnO₂
+Pyrolusite — MnO₂
+Goethite — FeO(OH)
+Limonite — Hydrous iron oxide
+Gold — Au
+Silver — Ag
+Copper — Cu
+Graphite — C
+Sulfur — S
+Molybdenite — MoS₂
+Galena — PbS
+Sphalerite — ZnS
+Chalcocite — Cu₂S
+Bornite — Cu₅FeS₄
+Chalcopyrite — CuFeS₂
+Covellite — CuS
+Arsenopyrite — FeAsS
+Pentlandite — (Fe,Ni)₉S₈
+Pyrrhotite — Fe₁₋ₓS
+Cinnabar — HgS
+Stibnite — Sb₂S₃
+Pyrite — FeS₂
+Marcasite — FeS₂

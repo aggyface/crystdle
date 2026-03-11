@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYSTDLE — Daily Mineral Guessing Game</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #08080b;
+            --accent-gold: #c8a84b;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            
+            --green-bg: rgba(45, 110, 74, 0.35);
+            --green-text: #4aab74;
+            --red-bg: rgba(110, 45, 45, 0.35);
+            --red-text: #c46060;
+            --arrow-bg: rgba(200, 168, 75, 0.15);
+            --arrow-text: #c8a84b;
+            
+            --cell-border: rgba(200, 168, 75, 0.08);
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Crimson Pro', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Ambient Glow Blobs */
+        .glow-blob {
+            position: fixed;
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .glow-gold {
+            top: -10%;
+            right: -10%;
+            background: var(--accent-gold);
+        }
+        .glow-green {
+            bottom: -10%;
+            left: -10%;
+            background: var(--green-text);
+        }
+
+        /* Grain Texture */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: 0.3rem;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(200, 168, 75, 0.3);
+            animation: glow 4s ease-in-out infinite alternate;
+            user-select: none;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(200, 168, 75, 0.2); }
+            to { text-shadow: 0 0 30px rgba(200, 168, 75, 0.5); }
+        }
+
+        .tagline {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Input Area (Moved Up) */
+        #inputArea {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 1.5rem 0;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .input-wrap {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+        }
+
+        #guessCounter {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+
+        #alreadyGuessedHint {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            height: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(200, 168, 75, 0.3);
+            border-radius: 4px;
+            padding: 12px 16px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        button#guessBtn {
+            background: var(--accent-gold);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 4px;
+            padding: 0 24px;
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        button#guessBtn:hover {
+            opacity: 0.9;
+        }
+
+        button#guessBtn:active { transform: scale(0.95); }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+        .dot.green { background-color: var(--green-text); }
+        .dot.red { background-color: var(--red-text); }
+        .dot.gold { background-color: var(--accent-gold); }
+
+        /* Table */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        .col-headers {
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            z-index: 10;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 190px repeat(7, 1fr);
+            gap: 4px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 8px;
+            min-width: 1000px;
+        }
+
+        .header-cell {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 8px 4px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #guessTable {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 1000px;
+        }
+
+        .empty-prompt {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 2rem;
+            width: 100%;
+            opacity: 0.5;
+        }
+
+        .guess-row {
+            display: grid;
+            grid-template-columns: 190px repeat(7, 1fr);
+            gap: 4px;
+            width: 100%;
+            animation: rowIn 0.5s ease-out forwards;
+        }
+
+        @keyframes rowIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cell {
+            min-height: 64px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--cell-border);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            position: relative;
+            transform: rotateX(-90deg);
+            animation: flipIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes flipIn {
+            to { transform: rotateX(0); }
+        }
+
+        .cell.name-cell {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .cell-formula {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            font-family: var(--font-mono);
+            text-transform: none;
+        }
+
+        .cell.green { background: var(--green-bg); color: var(--green-text); border-color: rgba(74, 171, 116, 0.2); }
+        .cell.red { background: var(--red-bg); color: var(--red-text); border-color: rgba(196, 96, 96, 0.2); }
+        .cell.arrow { background: var(--arrow-bg); color: var(--arrow-text); border-color: rgba(200, 168, 75, 0.2); }
+
+        .cell-value { display: block; }
+        .cell-icon { font-size: 1.2rem; margin-top: 4px; }
+
+        /* Autocomplete */
+        #autocomplete {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            background: #0c0c10;
+            border: 1px solid var(--accent-gold);
+            border-radius: 4px;
+            max-height: 220px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+        }
+
+        .auto-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: left;
+        }
+
+        .auto-item:hover, .auto-item.selected {
+            background: rgba(200, 168, 75, 0.1);
+            color: var(--accent-gold);
+        }
+
+        .auto-item mark {
+            background: transparent;
+            color: var(--accent-gold);
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        /* Modal */
+        #modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .modal-content {
+            background: #121218;
+            border: 1px solid rgba(200, 168, 75, 0.3);
+            border-top: 2px solid var(--accent-gold);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        #modalImage {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(200, 168, 75, 0.2);
+            background: rgba(255,255,255,0.02);
+            display: block;
+        }
+
+        #modalResultLabel {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            letter-spacing: 0.2rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        #modalMineralName {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        #modalFormula {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-divider {
+            width: 50px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 0 auto 1.5rem;
+        }
+
+        #modalFunFact {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        #modalScoreLine {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        button#playAgainBtn {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            border-radius: 4px;
+            padding: 12px 32px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button#playAgainBtn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-color);
+        }
+
+        /* Particles */
+        .particle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            pointer-events: none;
+            z-index: 2000;
+            border-radius: 50%;
+        }
+
+        @keyframes particleFall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        .shake { animation: shake 0.2s ease-in-out 0s 2; }
+
+    </style>
+</head>
+<body>
+
+    <div class="glow-blob glow-gold"></div>
+    <div class="glow-blob glow-green"></div>
+
+    <div class="wrap">
+        <header>
+            <div class="logo">CRYSTDLE</div>
+            <div class="tagline">Identify the mystery mineral</div>
+        </header>
+
+        <div id="inputArea">
+            <div id="alreadyGuessedHint">Already guessed</div>
+            <div class="input-row">
+                <div class="input-wrap">
+                    <div id="autocomplete" role="listbox"></div>
+                    <input type="text" id="guessInput" placeholder="Enter mineral name..." aria-label="Guess a mineral name" autocomplete="off">
+                </div>
+                <button id="guessBtn" aria-label="Submit guess">GUESS</button>
+            </div>
+            <div id="guessCounter">Guess 1 — No limit</div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="dot green"></div> Match</div>
+            <div class="legend-item"><div class="dot red"></div> No Match</div>
+            <div class="legend-item"><div class="dot gold"></div> Higher / Lower</div>
+        </div>
+
+        <div class="table-container">
+            <div class="col-headers">
+                <div class="header-cell">Mineral</div>
+                <div class="header-cell">Hardness</div>
+                <div class="header-cell">Sp. Gravity</div>
+                <div class="header-cell">Luster</div>
+                <div class="header-cell">Crystal System</div>
+                <div class="header-cell">Chem. Group</div>
+                <div class="header-cell">Birefringence</div>
+                <div class="header-cell">Optical Class</div>
+            </div>
+
+            <div id="guessTable">
+                <div class="empty-prompt">Type a mineral name to begin...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="" style="display:none">
+            <span id="modalResultLabel"></span>
+            <div id="modalMineralName"></div>
+            <div id="modalFormula"></div>
+            <div class="modal-divider"></div>
+            <p id="modalFunFact"></p>
+            <div id="modalScoreLine"></div>
+            <div style="margin-bottom: 2rem;">
+                <a id="modalMindatLink" href="#" target="_blank" style="color: var(--accent-gold); text-decoration: none; font-family: var(--font-display); font-size: 0.8rem; border-bottom: 1px solid var(--accent-gold); padding-bottom: 2px;">VIEW ON MINDAT.ORG</a>
+            </div>
+            <button id="playAgainBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script>
+        const MINERALS = [
+  {
+    "name": "Quartz",
+    "formula": "SiO₂",
+    "hardness": 7.0,
+    "specificGravity": 2.6,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "Quartz is the second most abundant mineral in Earth's continental crust.",
+    "mindatUrl": "https://www.mindat.org/min-3337.html",
+    "wikiTitle": "Quartz"
+  },
+  {
+    "name": "Scapolite",
+    "formula": "(Na,Ca)₄Al₃(Al,Si)₃Si₆O₂₄(Cl,CO₃,SO₄)",
+    "hardness": 5.5,
+    "specificGravity": 2.6,
+    "luster": "Vitreous",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Often found in metamorphic rocks, it can show beautiful fluorescence under UV light.",
+    "mindatUrl": "https://www.mindat.org/min-3571.html",
+    "wikiTitle": "Scapolite"
+  },
+  {
+    "name": "Nepheline",
+    "formula": "(Na,K)AlSiO₄",
+    "hardness": 5.5,
+    "specificGravity": 2.6,
+    "luster": "Greasy",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "A common silica-undersaturated mineral that never occurs in rocks with quartz.",
+    "mindatUrl": "https://www.mindat.org/min-2880.html",
+    "wikiTitle": "Nepheline"
+  },
+  {
+    "name": "Sodalite",
+    "formula": "Na₈(AlSiO₄)₆Cl₂",
+    "hardness": 5.5,
+    "specificGravity": 2.3,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "Famous for its rich royal blue color, often used as an ornamental gemstone.",
+    "mindatUrl": "https://www.mindat.org/min-3701.html",
+    "wikiTitle": "Sodalite"
+  },
+  {
+    "name": "Stilbite",
+    "formula": "NaCa₄(Si₂₇Al₉)O₇₂·2₈H₂O",
+    "hardness": 3.5,
+    "specificGravity": 2.1,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "A zeolite mineral that often forms beautiful bow-tie shaped crystal aggregates.",
+    "mindatUrl": "https://www.mindat.org/min-3784.html",
+    "wikiTitle": "Stilbite"
+  },
+  {
+    "name": "Anorthite",
+    "formula": "CaAl₂Si₂O₈",
+    "hardness": 6.0,
+    "specificGravity": 2.7,
+    "luster": "Vitreous",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The calcium-rich endmember of the plagioclase feldspar series.",
+    "mindatUrl": "https://www.mindat.org/min-246.html",
+    "wikiTitle": "Anorthite"
+  },
+  {
+    "name": "Albite",
+    "formula": "NaAlSi₃O₈",
+    "hardness": 6.0,
+    "specificGravity": 2.6,
+    "luster": "Vitreous",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "The sodium-rich endmember of the plagioclase feldspar series.",
+    "mindatUrl": "https://www.mindat.org/min-96.html",
+    "wikiTitle": "Albite"
+  },
+  {
+    "name": "Microcline",
+    "formula": "KAlSi₃O₈",
+    "hardness": 6.0,
+    "specificGravity": 2.5,
+    "luster": "Vitreous",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Famous for its 'tartan' twinning visible under a polarizing microscope.",
+    "mindatUrl": "https://www.mindat.org/min-2690.html",
+    "wikiTitle": "Microcline"
+  },
+  {
+    "name": "Orthoclase",
+    "formula": "KAlSi₃O₈",
+    "hardness": 6.0,
+    "specificGravity": 2.5,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "One of the defining minerals of the Mohs scale, representing hardness 6.",
+    "mindatUrl": "https://www.mindat.org/min-3026.html",
+    "wikiTitle": "Orthoclase"
+  },
+  {
+    "name": "Sanidine",
+    "formula": "KAlSi₃O₈",
+    "hardness": 6.0,
+    "specificGravity": 2.5,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Tectosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The high-temperature form of potassium feldspar, common in volcanic rocks.",
+    "mindatUrl": "https://www.mindat.org/min-3521.html",
+    "wikiTitle": "Sanidine"
+  },
+  {
+    "name": "Kaolinite",
+    "formula": "Al₂Si₂O₅(OH)₄",
+    "hardness": 2.0,
+    "specificGravity": 2.6,
+    "luster": "Earthy",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "A primary ingredient in the production of porcelain and fine china.",
+    "mindatUrl": "https://www.mindat.org/min-2152.html",
+    "wikiTitle": "Kaolinite"
+  },
+  {
+    "name": "Serpentine",
+    "formula": "Mg₃Si₂O₅(OH)₄",
+    "hardness": 3.0,
+    "specificGravity": 2.5,
+    "luster": "Greasy",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Named for its snake-like green colors and scaly appearance.",
+    "mindatUrl": "https://www.mindat.org/min-11135.html",
+    "wikiTitle": "Serpentine_subgroup"
+  },
+  {
+    "name": "Talc",
+    "formula": "Mg₃Si₄O₁₀(OH)₂",
+    "hardness": 1.0,
+    "specificGravity": 2.7,
+    "luster": "Pearly",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The softest known mineral, defining 1 on the Mohs hardness scale.",
+    "mindatUrl": "https://www.mindat.org/min-3875.html",
+    "wikiTitle": "Talc"
+  },
+  {
+    "name": "Muscovite",
+    "formula": "KAl₂Si₃AlO₁₀(OH)₂",
+    "hardness": 2.5,
+    "specificGravity": 2.8,
+    "luster": "Pearly",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Known as 'Isinglass', it was once used as a heat-resistant glass for ovens.",
+    "mindatUrl": "https://www.mindat.org/min-2815.html",
+    "wikiTitle": "Muscovite"
+  },
+  {
+    "name": "Biotite",
+    "formula": "K(Mg,Fe)₃Si₃AlO₁₀(OH)₂",
+    "hardness": 2.5,
+    "specificGravity": 3.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The most common dark-colored mica, rich in iron and magnesium.",
+    "mindatUrl": "https://www.mindat.org/min-677.html",
+    "wikiTitle": "Biotite"
+  },
+  {
+    "name": "Lepidolite",
+    "formula": "K(Li,Al)₃(Si,Al)₄O₁₀(F,OH)₂",
+    "hardness": 2.5,
+    "specificGravity": 2.8,
+    "luster": "Pearly",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "A lithium-rich mica often identified by its distinct lilac or pink color.",
+    "mindatUrl": "https://www.mindat.org/min-2384.html",
+    "wikiTitle": "Lepidolite"
+  },
+  {
+    "name": "Chlorite",
+    "formula": "(Mg,Fe)₆(Si,Al)₄O₁₀(OH)₈",
+    "hardness": 2.0,
+    "specificGravity": 2.8,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Phyllosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Gives many metamorphic rocks their characteristic green color.",
+    "mindatUrl": "https://www.mindat.org/min-1016.html",
+    "wikiTitle": "Chlorite_group"
+  },
+  {
+    "name": "Spodumene",
+    "formula": "LiAlSi₂O₆",
+    "hardness": 6.5,
+    "specificGravity": 3.1,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "An important source of lithium; its pink variety is known as Kunzite.",
+    "mindatUrl": "https://www.mindat.org/min-3733.html",
+    "wikiTitle": "Spodumene"
+  },
+  {
+    "name": "Tremolite",
+    "formula": "Ca₂Mg₅Si₈O₂₂(OH)₂",
+    "hardness": 5.5,
+    "specificGravity": 3.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "A member of the amphibole group that can form fibrous 'asbestos' crystals.",
+    "mindatUrl": "https://www.mindat.org/min-4011.html",
+    "wikiTitle": "Tremolite"
+  },
+  {
+    "name": "Actinolite",
+    "formula": "Ca₂Fe₅Si₈O₂₂(OH)₂",
+    "hardness": 5.5,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The green fibrous variety of this mineral is one of the types of asbestos.",
+    "mindatUrl": "https://www.mindat.org/min-18.html",
+    "wikiTitle": "Actinolite"
+  },
+  {
+    "name": "Hornblende",
+    "formula": "(Ca,Na)₂₋₃(Mg,Fe,Al)₅(Al,Si)₈O₂₂(OH,F)₂",
+    "hardness": 5.5,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The most common amphibole mineral, typically found in dark igneous rocks.",
+    "mindatUrl": "https://www.mindat.org/min-1930.html",
+    "wikiTitle": "Hornblende"
+  },
+  {
+    "name": "Enstatite",
+    "formula": "Mg₂Si₂O₆",
+    "hardness": 5.5,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "A common pyroxene found in both terrestrial rocks and stony meteorites.",
+    "mindatUrl": "https://www.mindat.org/min-1384.html",
+    "wikiTitle": "Enstatite"
+  },
+  {
+    "name": "Diopside",
+    "formula": "CaMgSi₂O₆",
+    "hardness": 5.5,
+    "specificGravity": 3.3,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "A common pyroxene; Chrome Diopside is used as a vivid green gemstone.",
+    "mindatUrl": "https://www.mindat.org/min-1294.html",
+    "wikiTitle": "Diopside"
+  },
+  {
+    "name": "Augite",
+    "formula": "(Ca,Na)(Mg,Fe,Al)(Si,Al)₂O₆",
+    "hardness": 5.5,
+    "specificGravity": 3.4,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "The most common pyroxene, forming the bulk of basaltic lava flows.",
+    "mindatUrl": "https://www.mindat.org/min-419.html",
+    "wikiTitle": "Augite"
+  },
+  {
+    "name": "Wollastonite",
+    "formula": "CaSiO₃",
+    "hardness": 4.5,
+    "specificGravity": 2.9,
+    "luster": "Vitreous",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Inosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Named after chemist William Wollaston, it's used in ceramics and brake linings.",
+    "mindatUrl": "https://www.mindat.org/min-4303.html",
+    "wikiTitle": "Wollastonite"
+  },
+  {
+    "name": "Beryl",
+    "formula": "Be₃Al₂Si₆O₁₈",
+    "hardness": 7.5,
+    "specificGravity": 2.7,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Cyclosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Emerald and Aquamarine are both gemstone varieties of this mineral.",
+    "mindatUrl": "https://www.mindat.org/min-565.html",
+    "wikiTitle": "Beryl"
+  },
+  {
+    "name": "Tourmaline",
+    "formula": "XY₃Z₆(T₆O₁₈)(BO₃)₃V₃W",
+    "hardness": 7.0,
+    "specificGravity": 3.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Cyclosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Famous for its pyroelectric properties, becoming electrically charged when heated.",
+    "mindatUrl": "https://www.mindat.org/min-4003.html",
+    "wikiTitle": "Tourmaline"
+  },
+  {
+    "name": "Epidote",
+    "formula": "Ca₂Al₂Fe(SiO₄)(Si₂O₇)O(OH)",
+    "hardness": 6.5,
+    "specificGravity": 3.4,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Sorosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Easily identified by its characteristic pistachio-green color.",
+    "mindatUrl": "https://www.mindat.org/min-1389.html",
+    "wikiTitle": "Epidote"
+  },
+  {
+    "name": "Olivine",
+    "formula": "(Mg,Fe)₂SiO₄",
+    "hardness": 6.5,
+    "specificGravity": 3.3,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Primary component of Earth's upper mantle; its gem variety is Peridot.",
+    "mindatUrl": "https://www.mindat.org/min-2983.html",
+    "wikiTitle": "Olivine"
+  },
+  {
+    "name": "Andalusite",
+    "formula": "Al₂SiO₅",
+    "hardness": 7.0,
+    "specificGravity": 3.1,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The variety 'Chiastolite' contains carbon inclusions forming a dark cross.",
+    "mindatUrl": "https://www.mindat.org/min-217.html",
+    "wikiTitle": "Andalusite"
+  },
+  {
+    "name": "Kyanite",
+    "formula": "Al₂SiO₅",
+    "hardness": 5.0,
+    "specificGravity": 3.6,
+    "luster": "Vitreous",
+    "crystalSystem": "Triclinic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Unique for having two different hardnesses depending on crystal direction.",
+    "mindatUrl": "https://www.mindat.org/min-2303.html",
+    "wikiTitle": "Kyanite"
+  },
+  {
+    "name": "Sillimanite",
+    "formula": "Al₂SiO₅",
+    "hardness": 7.0,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "An indicator mineral for high-temperature metamorphic environments.",
+    "mindatUrl": "https://www.mindat.org/min-3662.html",
+    "wikiTitle": "Sillimanite"
+  },
+  {
+    "name": "Staurolite",
+    "formula": "Fe₂Al₉Si₄O₂₃(OH)",
+    "hardness": 7.0,
+    "specificGravity": 3.7,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Often forms cruciform (cross-shaped) twinned crystals called 'fairy stones'.",
+    "mindatUrl": "https://www.mindat.org/min-3753.html",
+    "wikiTitle": "Staurolite"
+  },
+  {
+    "name": "Zircon",
+    "formula": "ZrSiO₄",
+    "hardness": 7.5,
+    "specificGravity": 4.7,
+    "luster": "Adamantine",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Strong",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "The oldest known material on Earth, with some crystals aged over 4 billion years.",
+    "mindatUrl": "https://www.mindat.org/min-4403.html",
+    "wikiTitle": "Zircon"
+  },
+  {
+    "name": "Titanite",
+    "formula": "CaTiSiO₅",
+    "hardness": 5.0,
+    "specificGravity": 3.5,
+    "luster": "Adamantine",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Also called Sphene, it has a higher dispersion (fire) than diamond.",
+    "mindatUrl": "https://www.mindat.org/min-3977.html",
+    "wikiTitle": "Titanite"
+  },
+  {
+    "name": "Garnet",
+    "formula": "A₃B₂(SiO₄)₃",
+    "hardness": 7.0,
+    "specificGravity": 3.5,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Nesosilicate",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "A diverse group of minerals used both as gemstones and industrial abrasives.",
+    "mindatUrl": "https://www.mindat.org/min-10272.html",
+    "wikiTitle": "Garnet"
+  },
+  {
+    "name": "Calcite",
+    "formula": "CaCO₃",
+    "hardness": 3.0,
+    "specificGravity": 2.7,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Famous for its extreme double refraction and reaction to weak acid.",
+    "mindatUrl": "https://www.mindat.org/min-859.html",
+    "wikiTitle": "Calcite"
+  },
+  {
+    "name": "Aragonite",
+    "formula": "CaCO₃",
+    "hardness": 3.5,
+    "specificGravity": 2.9,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "The primary mineral found in the shells of many marine organisms.",
+    "mindatUrl": "https://www.mindat.org/min-307.html",
+    "wikiTitle": "Aragonite"
+  },
+  {
+    "name": "Magnesite",
+    "formula": "MgCO₃",
+    "hardness": 3.5,
+    "specificGravity": 3.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "A common source of magnesium; often forms white, porcelain-like masses.",
+    "mindatUrl": "https://www.mindat.org/min-2482.html",
+    "wikiTitle": "Magnesite"
+  },
+  {
+    "name": "Dolomite",
+    "formula": "CaMg(CO₃)₂",
+    "hardness": 3.5,
+    "specificGravity": 2.8,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Named after the French geologist Déodat de Dolomieu.",
+    "mindatUrl": "https://www.mindat.org/min-1304.html",
+    "wikiTitle": "Dolomite"
+  },
+  {
+    "name": "Rhodochrosite",
+    "formula": "MnCO₃",
+    "hardness": 3.5,
+    "specificGravity": 3.7,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Known for its beautiful pink to red color; the state mineral of Colorado.",
+    "mindatUrl": "https://www.mindat.org/min-3406.html",
+    "wikiTitle": "Rhodochrosite"
+  },
+  {
+    "name": "Siderite",
+    "formula": "FeCO₃",
+    "hardness": 3.5,
+    "specificGravity": 4.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "An important iron ore, often found in coal-bearing sedimentary rocks.",
+    "mindatUrl": "https://www.mindat.org/min-3647.html",
+    "wikiTitle": "Siderite"
+  },
+  {
+    "name": "Malachite",
+    "formula": "Cu₂CO₃(OH)₂",
+    "hardness": 3.5,
+    "specificGravity": 4.0,
+    "luster": "Silky",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "A striking green copper mineral often found in botryoidal (grape-like) masses.",
+    "mindatUrl": "https://www.mindat.org/min-2550.html",
+    "wikiTitle": "Malachite"
+  },
+  {
+    "name": "Azurite",
+    "formula": "Cu₃(CO₃)₂(OH)₂",
+    "hardness": 3.5,
+    "specificGravity": 3.8,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Carbonate",
+    "birefringence": "Strong",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Named for its deep 'azure' blue color; often found alongside green malachite.",
+    "mindatUrl": "https://www.mindat.org/min-447.html",
+    "wikiTitle": "Azurite"
+  },
+  {
+    "name": "Barite",
+    "formula": "BaSO₄",
+    "hardness": 3.0,
+    "specificGravity": 4.5,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Unusually heavy for a non-metallic mineral due to its barium content.",
+    "mindatUrl": "https://www.mindat.org/min-549.html",
+    "wikiTitle": "Barite"
+  },
+  {
+    "name": "Celestite",
+    "formula": "SrSO₄",
+    "hardness": 3.0,
+    "specificGravity": 4.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Often forms beautiful sky-blue geode linings; a major source of strontium.",
+    "mindatUrl": "https://www.mindat.org/min-927.html",
+    "wikiTitle": "Celestine_(mineral)"
+  },
+  {
+    "name": "Anhydrite",
+    "formula": "CaSO₄",
+    "hardness": 3.5,
+    "specificGravity": 3.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfate",
+    "birefringence": "Moderate",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "The anhydrous form of calcium sulfate, meaning 'without water'.",
+    "mindatUrl": "https://www.mindat.org/min-234.html",
+    "wikiTitle": "Anhydrite"
+  },
+  {
+    "name": "Gypsum",
+    "formula": "CaSO₄·₂H₂O",
+    "hardness": 2.0,
+    "specificGravity": 2.3,
+    "luster": "Vitreous",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Sulfate",
+    "birefringence": "Weak",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "The defining mineral for hardness 2 on the Mohs scale.",
+    "mindatUrl": "https://www.mindat.org/min-1784.html",
+    "wikiTitle": "Gypsum"
+  },
+  {
+    "name": "Scheelite",
+    "formula": "CaWO₄",
+    "hardness": 4.5,
+    "specificGravity": 6.1,
+    "luster": "Adamantine",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "Famous for its bright blue-white fluorescence under shortwave UV light.",
+    "mindatUrl": "https://www.mindat.org/min-3576.html",
+    "wikiTitle": "Scheelite"
+  },
+  {
+    "name": "Apatite",
+    "formula": "Ca₅(PO₄)₃(OH,F,Cl)",
+    "hardness": 5.0,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Phosphate",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "The defining mineral for hardness 5 on the Mohs scale.",
+    "mindatUrl": "https://www.mindat.org/min-29229.html",
+    "wikiTitle": "Apatite"
+  },
+  {
+    "name": "Halite",
+    "formula": "NaCl",
+    "hardness": 2.5,
+    "specificGravity": 2.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Halide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "Common rock salt, edible and essential for life.",
+    "mindatUrl": "https://www.mindat.org/min-1804.html",
+    "wikiTitle": "Halite"
+  },
+  {
+    "name": "Sylvite",
+    "formula": "KCl",
+    "hardness": 2.0,
+    "specificGravity": 2.0,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Halide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "A primary source of potassium for fertilizers, with a distinct bitter taste.",
+    "mindatUrl": "https://www.mindat.org/min-3850.html",
+    "wikiTitle": "Sylvite"
+  },
+  {
+    "name": "Fluorite",
+    "formula": "CaF₂",
+    "hardness": 4.0,
+    "specificGravity": 3.2,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Halide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The defining mineral for hardness 4; the term 'fluorescence' is named after it.",
+    "mindatUrl": "https://www.mindat.org/min-1576.html",
+    "wikiTitle": "Fluorite"
+  },
+  {
+    "name": "Corundum",
+    "formula": "Al₂O₃",
+    "hardness": 9.0,
+    "specificGravity": 4.0,
+    "luster": "Adamantine",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "The second hardest natural mineral; its varieties are Ruby and Sapphire.",
+    "mindatUrl": "https://www.mindat.org/min-1136.html",
+    "wikiTitle": "Corundum"
+  },
+  {
+    "name": "Hematite",
+    "formula": "Fe₂O₃",
+    "hardness": 5.5,
+    "specificGravity": 5.3,
+    "luster": "Metallic",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "The most important iron ore; leaves a distinctive reddish-brown streak.",
+    "mindatUrl": "https://www.mindat.org/min-1856.html",
+    "wikiTitle": "Hematite"
+  },
+  {
+    "name": "Ilmenite",
+    "formula": "FeTiO₃",
+    "hardness": 5.5,
+    "specificGravity": 4.7,
+    "luster": "Submetallic",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Weak",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "The main ore of titanium, often found as heavy sand on beaches.",
+    "mindatUrl": "https://www.mindat.org/min-2013.html",
+    "wikiTitle": "Ilmenite"
+  },
+  {
+    "name": "Spinel",
+    "formula": "MgAl₂O₄",
+    "hardness": 8.0,
+    "specificGravity": 3.6,
+    "luster": "Vitreous",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Oxide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "Often mistaken for ruby; the 'Black Prince's Ruby' in the UK crown jewels is spinel.",
+    "mindatUrl": "https://www.mindat.org/min-3729.html",
+    "wikiTitle": "Spinel"
+  },
+  {
+    "name": "Chromite",
+    "formula": "FeCr₂O₄",
+    "hardness": 5.5,
+    "specificGravity": 4.6,
+    "luster": "Submetallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Oxide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The only economic ore of chromium, used to make stainless steel.",
+    "mindatUrl": "https://www.mindat.org/min-1036.html",
+    "wikiTitle": "Chromite"
+  },
+  {
+    "name": "Rutile",
+    "formula": "TiO₂",
+    "hardness": 6.0,
+    "specificGravity": 4.2,
+    "luster": "Adamantine",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "Commonly forms golden needle-like inclusions in quartz known as 'Venus hair'.",
+    "mindatUrl": "https://www.mindat.org/min-3486.html",
+    "wikiTitle": "Rutile"
+  },
+  {
+    "name": "Magnetite",
+    "formula": "Fe₃O₄",
+    "hardness": 6.0,
+    "specificGravity": 5.2,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Oxide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The most magnetic mineral; naturally magnetized pieces are called lodestones.",
+    "mindatUrl": "https://www.mindat.org/min-2538.html",
+    "wikiTitle": "Magnetite"
+  },
+  {
+    "name": "Cassiterite",
+    "formula": "SnO₂",
+    "hardness": 6.5,
+    "specificGravity": 7.0,
+    "luster": "Adamantine",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Strong",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "The primary ore of tin, remarkably heavy due to its high tin content.",
+    "mindatUrl": "https://www.mindat.org/min-917.html",
+    "wikiTitle": "Cassiterite"
+  },
+  {
+    "name": "Pyrolusite",
+    "formula": "MnO₂",
+    "hardness": 6.0,
+    "specificGravity": 4.8,
+    "luster": "Submetallic",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Oxide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "An important manganese ore; often forms dendritic (branching) patterns on rocks.",
+    "mindatUrl": "https://www.mindat.org/min-3318.html",
+    "wikiTitle": "Pyrolusite"
+  },
+  {
+    "name": "Goethite",
+    "formula": "FeO(OH)",
+    "hardness": 5.0,
+    "specificGravity": 4.3,
+    "luster": "Adamantine",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Hydroxide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Named after Johann Wolfgang von Goethe, it's a major component of rust.",
+    "mindatUrl": "https://www.mindat.org/min-1719.html",
+    "wikiTitle": "Goethite"
+  },
+  {
+    "name": "Gold",
+    "formula": "Au",
+    "hardness": 2.5,
+    "specificGravity": 19.3,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Native Element",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The most malleable metal; a single ounce can be beaten into a 300-square-foot sheet.",
+    "mindatUrl": "https://www.mindat.org/min-1720.html",
+    "wikiTitle": "Gold"
+  },
+  {
+    "name": "Silver",
+    "formula": "Ag",
+    "hardness": 2.5,
+    "specificGravity": 10.5,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Native Element",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "Has the highest electrical and thermal conductivity of any metal.",
+    "mindatUrl": "https://www.mindat.org/min-3664.html",
+    "wikiTitle": "Silver"
+  },
+  {
+    "name": "Copper",
+    "formula": "Cu",
+    "hardness": 2.5,
+    "specificGravity": 8.9,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Native Element",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "One of the few metals that occurs in nature in directly usable metallic form.",
+    "mindatUrl": "https://www.mindat.org/min-1116.html",
+    "wikiTitle": "Copper"
+  },
+  {
+    "name": "Graphite",
+    "formula": "C",
+    "hardness": 1.5,
+    "specificGravity": 2.2,
+    "luster": "Submetallic",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Native Element",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "The soft polymorph of carbon, used as 'lead' in pencils.",
+    "mindatUrl": "https://www.mindat.org/min-1740.html",
+    "wikiTitle": "Graphite"
+  },
+  {
+    "name": "Sulfur",
+    "formula": "S",
+    "hardness": 2.0,
+    "specificGravity": 2.1,
+    "luster": "Resinous",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Native Element",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Famed for its bright yellow color and the rotten-egg smell when burned.",
+    "mindatUrl": "https://www.mindat.org/min-3826.html",
+    "wikiTitle": "Sulfur"
+  },
+  {
+    "name": "Molybdenite",
+    "formula": "MoS₂",
+    "hardness": 1.5,
+    "specificGravity": 4.7,
+    "luster": "Metallic",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (-)",
+    "funFact": "Looks very similar to graphite but has a slightly bluish-gray streak.",
+    "mindatUrl": "https://www.mindat.org/min-2746.html",
+    "wikiTitle": "Molybdenite"
+  },
+  {
+    "name": "Galena",
+    "formula": "PbS",
+    "hardness": 2.5,
+    "specificGravity": 7.6,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The primary ore of lead, famous for its perfect cubic cleavage.",
+    "mindatUrl": "https://www.mindat.org/min-1641.html",
+    "wikiTitle": "Galena"
+  },
+  {
+    "name": "Sphalerite",
+    "formula": "ZnS",
+    "hardness": 3.5,
+    "specificGravity": 4.1,
+    "luster": "Adamantine",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The main ore of zinc, with a dispersion three times higher than diamond.",
+    "mindatUrl": "https://www.mindat.org/min-3727.html",
+    "wikiTitle": "Sphalerite"
+  },
+  {
+    "name": "Chalcocite",
+    "formula": "Cu₂S",
+    "hardness": 2.5,
+    "specificGravity": 5.8,
+    "luster": "Metallic",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "An important copper ore that is usually gray or black with a dull surface.",
+    "mindatUrl": "https://www.mindat.org/min-962.html",
+    "wikiTitle": "Chalcocite"
+  },
+  {
+    "name": "Bornite",
+    "formula": "Cu₅FeS₄",
+    "hardness": 3.0,
+    "specificGravity": 5.1,
+    "luster": "Metallic",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Called 'Peacock Ore' due to the brilliant iridescent tarnish it develops.",
+    "mindatUrl": "https://www.mindat.org/min-727.html",
+    "wikiTitle": "Bornite"
+  },
+  {
+    "name": "Chalcopyrite",
+    "formula": "CuFeS₂",
+    "hardness": 3.5,
+    "specificGravity": 4.2,
+    "luster": "Metallic",
+    "crystalSystem": "Tetragonal",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "The most important copper ore; often resembles pyrite but is softer.",
+    "mindatUrl": "https://www.mindat.org/min-955.html",
+    "wikiTitle": "Chalcopyrite"
+  },
+  {
+    "name": "Covellite",
+    "formula": "CuS",
+    "hardness": 1.5,
+    "specificGravity": 4.7,
+    "luster": "Submetallic",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "A striking indigo-blue mineral; it was the first natural superconductor discovered.",
+    "mindatUrl": "https://www.mindat.org/min-1144.html",
+    "wikiTitle": "Covellite"
+  },
+  {
+    "name": "Arsenopyrite",
+    "formula": "FeAsS",
+    "hardness": 5.5,
+    "specificGravity": 6.1,
+    "luster": "Metallic",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Releases a strong garlic-like odor when struck or heated.",
+    "mindatUrl": "https://www.mindat.org/min-305.html",
+    "wikiTitle": "Arsenopyrite"
+  },
+  {
+    "name": "Pentlandite",
+    "formula": "(Fe,Ni)₉S₈",
+    "hardness": 3.5,
+    "specificGravity": 4.8,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "The principal ore of nickel, often found with pyrrhotite and chalcopyrite.",
+    "mindatUrl": "https://www.mindat.org/min-3155.html",
+    "wikiTitle": "Pentlandite"
+  },
+  {
+    "name": "Pyrrhotite",
+    "formula": "Fe₁₋ₓS",
+    "hardness": 4.0,
+    "specificGravity": 4.6,
+    "luster": "Metallic",
+    "crystalSystem": "Monoclinic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (+)",
+    "funFact": "Known as 'magnetic pyrite' because it is weakly to strongly magnetic.",
+    "mindatUrl": "https://www.mindat.org/min-3328.html",
+    "wikiTitle": "Pyrrhotite"
+  },
+  {
+    "name": "Cinnabar",
+    "formula": "HgS",
+    "hardness": 2.0,
+    "specificGravity": 8.1,
+    "luster": "Adamantine",
+    "crystalSystem": "Hexagonal",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Uniaxial (+)",
+    "funFact": "The main ore of mercury and the source of the bright red pigment 'vermilion'.",
+    "mindatUrl": "https://www.mindat.org/min-1052.html",
+    "wikiTitle": "Cinnabar"
+  },
+  {
+    "name": "Stibnite",
+    "formula": "Sb₂S₃",
+    "hardness": 2.0,
+    "specificGravity": 4.6,
+    "luster": "Metallic",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Forms spectacular long, sword-like gray crystals; the main ore of antimony.",
+    "mindatUrl": "https://www.mindat.org/min-3782.html",
+    "wikiTitle": "Stibnite"
+  },
+  {
+    "name": "Pyrite",
+    "formula": "FeS₂",
+    "hardness": 6.0,
+    "specificGravity": 5.0,
+    "luster": "Metallic",
+    "crystalSystem": "Isometric",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "None",
+    "opticalClass": "Isotropic",
+    "funFact": "Called 'Fool's Gold' because its brassy color resembles gold.",
+    "mindatUrl": "https://www.mindat.org/min-3314.html",
+    "wikiTitle": "Pyrite"
+  },
+  {
+    "name": "Marcasite",
+    "formula": "FeS₂",
+    "hardness": 6.0,
+    "specificGravity": 4.9,
+    "luster": "Metallic",
+    "crystalSystem": "Orthorhombic",
+    "chemicalGroup": "Sulfide",
+    "birefringence": "Extreme",
+    "opticalClass": "Biaxial (-)",
+    "funFact": "Also called 'white iron pyrite'; it often forms cockscomb crystal aggregates.",
+    "mindatUrl": "https://www.mindat.org/min-2571.html",
+    "wikiTitle": "Marcasite"
+  }
+];
+
+        let state = {
+            answer: null,
+            guesses: [],
+            gameOver: false,
+            won: false
+        };
+
+        const BIRE_ORDER = ["None", "Weak", "Moderate", "Strong", "Extreme"];
+
+        const elements = {
+            guessTable: document.getElementById('guessTable'),
+            guessInput: document.getElementById('guessInput'),
+            guessBtn: document.getElementById('guessBtn'),
+            autocomplete: document.getElementById('autocomplete'),
+            modal: document.getElementById('modal'),
+            modalImage: document.getElementById('modalImage'),
+            modalResultLabel: document.getElementById('modalResultLabel'),
+            modalMineralName: document.getElementById('modalMineralName'),
+            modalFormula: document.getElementById('modalFormula'),
+            modalFunFact: document.getElementById('modalFunFact'),
+            modalScoreLine: document.getElementById('modalScoreLine'),
+            modalMindatLink: document.getElementById('modalMindatLink'),
+            playAgainBtn: document.getElementById('playAgainBtn'),
+            guessCounter: document.getElementById('guessCounter'),
+            alreadyGuessedHint: document.getElementById('alreadyGuessedHint'),
+            inputArea: document.getElementById('inputArea')
+        };
+
+        function initGame(isDaily = true) {
+            if (isDaily) {
+                const now = new Date();
+                const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+                state.answer = MINERALS[seed % MINERALS.length];
+            } else {
+                state.answer = MINERALS[Math.floor(Math.random() * MINERALS.length)];
+            }
+            
+            state.guesses = [];
+            state.gameOver = false;
+            state.won = false;
+            
+            elements.guessTable.innerHTML = '<div class="empty-prompt">Type a mineral name to begin...</div>';
+            elements.guessInput.value = '';
+            elements.modal.style.display = 'none';
+            elements.modal.style.opacity = '0';
+            elements.modalImage.style.display = 'none';
+            updateGuessCounter();
+        }
+
+        function updateGuessCounter() {
+            elements.guessCounter.textContent = `Guess ${state.guesses.length + 1} — No limit`;
+        }
+
+        // Autocomplete Logic
+        let selectedIndex = -1;
+
+        elements.guessInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            if (state.guesses.some(g => g.toLowerCase() === query)) {
+                elements.alreadyGuessedHint.style.opacity = '1';
+            } else {
+                elements.alreadyGuessedHint.style.opacity = '0';
+            }
+
+            if (!query) {
+                closeAutocomplete();
+                return;
+            }
+
+            const matches = MINERALS.filter(m => 
+                m.name.toLowerCase().includes(query) && 
+                !state.guesses.includes(m.name)
+            ).slice(0, 8);
+
+            renderAutocomplete(matches, query);
+        });
+
+        elements.guessInput.addEventListener('keydown', (e) => {
+            if (state.gameOver) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                moveSelection(1);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                moveSelection(-1);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                const items = elements.autocomplete.children;
+                if (selectedIndex >= 0 && items[selectedIndex]) {
+                    submitGuess(items[selectedIndex].dataset.name);
+                } else {
+                    submitGuess(elements.guessInput.value);
+                }
+            } else if (e.key === 'Escape') {
+                closeAutocomplete();
+            }
+        });
+
+        function renderAutocomplete(matches, query) {
+            if (matches.length === 0) {
+                closeAutocomplete();
+                return;
+            }
+
+            elements.autocomplete.innerHTML = '';
+            matches.forEach((m, i) => {
+                const item = document.createElement('div');
+                item.className = 'auto-item';
+                item.setAttribute('role', 'option');
+                item.dataset.name = m.name;
+                
+                const regex = new RegExp(`(${query})`, 'gi');
+                item.innerHTML = m.name.replace(regex, '<mark>$1</mark>');
+                
+                item.addEventListener('click', () => submitGuess(m.name));
+                elements.autocomplete.appendChild(item);
+            });
+
+            elements.autocomplete.style.display = 'block';
+            selectedIndex = -1;
+        }
+
+        function moveSelection(dir) {
+            const items = elements.autocomplete.children;
+            if (items.length === 0) return;
+
+            if (selectedIndex >= 0) items[selectedIndex].classList.remove('selected');
+            selectedIndex = (selectedIndex + dir + items.length) % items.length;
+            items[selectedIndex].classList.add('selected');
+            items[selectedIndex].scrollIntoView({ block: 'nearest' });
+        }
+
+        function closeAutocomplete() {
+            elements.autocomplete.innerHTML = '';
+            elements.autocomplete.style.display = 'none';
+            selectedIndex = -1;
+        }
+
+        // Guess Logic
+        function submitGuess(name) {
+            if (state.gameOver || !name) return;
+            
+            const mineral = MINERALS.find(m => m.name.toLowerCase() === name.trim().toLowerCase());
+
+            if (!mineral) {
+                shakeInput();
+                return;
+            }
+
+            if (state.guesses.includes(mineral.name)) {
+                elements.alreadyGuessedHint.style.opacity = '1';
+                setTimeout(() => elements.alreadyGuessedHint.style.opacity = '0', 2000);
+                shakeInput();
+                return;
+            }
+
+            if (state.guesses.length === 0) {
+                elements.guessTable.innerHTML = '';
+            }
+
+            closeAutocomplete();
+            evaluateGuess(mineral);
+            elements.guessInput.value = '';
+            elements.alreadyGuessedHint.style.opacity = '0';
+            elements.guessInput.focus();
+            updateGuessCounter();
+        }
+
+        function shakeInput() {
+            elements.guessInput.parentElement.classList.add('shake');
+            setTimeout(() => elements.guessInput.parentElement.classList.remove('shake'), 400);
+        }
+
+        function evaluateGuess(guess) {
+            state.guesses.push(guess.name);
+            const ans = state.answer;
+            
+            const results = [
+                { val: guess.name, formula: guess.formula, status: 'name' },
+                compareNumeric(guess.hardness, ans.hardness),
+                compareNumeric(guess.specificGravity, ans.specificGravity, 0.3),
+                compareCategorical(guess.luster, ans.luster),
+                compareCategorical(guess.crystalSystem, ans.crystalSystem),
+                compareCategorical(guess.chemicalGroup, ans.chemicalGroup),
+                compareBirefringence(guess.birefringence, ans.birefringence),
+                compareCategorical(guess.opticalClass, ans.opticalClass)
+            ];
+
+            renderRow(results);
+
+            const isWin = results.slice(1).every(r => r.status === 'green');
+            if (isWin) {
+                endGame(true);
+            }
+        }
+
+        function compareNumeric(val, target, tolerance = 0) {
+            if (Math.abs(val - target) <= tolerance) return { val, status: 'green', icon: '✓' };
+            return { 
+                val, 
+                status: 'arrow', 
+                icon: val < target ? '↑' : '↓' 
+            };
+        }
+
+        function compareBirefringence(val, target) {
+            const idxVal = BIRE_ORDER.indexOf(val);
+            const idxTarget = BIRE_ORDER.indexOf(target);
+            
+            if (idxVal === idxTarget) return { val, status: 'green', icon: '✓' };
+            return { 
+                val, 
+                status: 'arrow', 
+                icon: idxVal < idxTarget ? '↑' : '↓' 
+            };
+        }
+
+        function compareCategorical(val, target) {
+            const displayVal = typeof val === 'boolean' ? (val ? 'Yes' : 'No') : val;
+            if (val === target) return { val: displayVal, status: 'green', icon: '✓' };
+            return { val: displayVal, status: 'red', icon: '✗' };
+        }
+
+        function renderRow(results) {
+            const row = document.createElement('div');
+            row.className = 'guess-row';
+            
+            results.forEach((res, i) => {
+                const cell = document.createElement('div');
+                cell.className = `cell ${res.status}`;
+                cell.style.animationDelay = `${i * 0.08}s`;
+                
+                const valSpan = document.createElement('span');
+                valSpan.className = 'cell-value';
+                valSpan.textContent = res.val;
+                cell.appendChild(valSpan);
+
+                if (res.formula) {
+                    const formSpan = document.createElement('span');
+                    formSpan.className = 'cell-formula';
+                    formSpan.textContent = res.formula;
+                    cell.appendChild(formSpan);
+                }
+                
+                if (res.icon) {
+                    const iconSpan = document.createElement('span');
+                    iconSpan.className = 'cell-icon';
+                    iconSpan.textContent = res.icon;
+                    cell.appendChild(iconSpan);
+                }
+                
+                row.appendChild(cell);
+            });
+
+            elements.guessTable.prepend(row);
+        }
+
+        async function endGame(won) {
+            state.gameOver = true;
+            state.won = won;
+
+            if (won) spawnParticles();
+
+            // Fetch Image
+            try {
+                const wikiRes = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${state.answer.wikiTitle}`);
+                const wikiData = await wikiRes.json();
+                if (wikiData.thumbnail && wikiData.thumbnail.source) {
+                    elements.modalImage.src = wikiData.thumbnail.source;
+                    elements.modalImage.alt = state.answer.name;
+                    elements.modalImage.style.display = 'block';
+                } else {
+                    elements.modalImage.style.display = 'none';
+                }
+            } catch (err) {
+                console.error("Wiki fetch failed", err);
+                elements.modalImage.style.display = 'none';
+            }
+
+            setTimeout(() => {
+                elements.modalResultLabel.textContent = won ? 'IDENTIFIED' : 'THE ANSWER WAS';
+                elements.modalMineralName.textContent = state.answer.name;
+                elements.modalFormula.textContent = state.answer.formula;
+                elements.modalFunFact.textContent = state.answer.funFact;
+                elements.modalMindatLink.href = state.answer.mindatUrl;
+                elements.modalScoreLine.textContent = won 
+                    ? `Solved in ${state.guesses.length} guesses` 
+                    : '';
+                
+                elements.modal.style.display = 'flex';
+                setTimeout(() => elements.modal.style.opacity = '1', 10);
+            }, 500);
+        }
+
+        function spawnParticles() {
+            for (let i = 0; i < 50; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.top = '-20px';
+                p.style.backgroundColor = Math.random() > 0.5 ? 'var(--accent-gold)' : 'var(--green-text)';
+                p.style.animation = `particleFall ${2 + Math.random() * 2}s linear forwards`;
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 4000);
+            }
+        }
+
+        elements.guessBtn.addEventListener('click', () => submitGuess(elements.guessInput.value));
+        elements.playAgainBtn.addEventListener('click', () => initGame(false));
+        
+        document.addEventListener('click', (e) => {
+            if (!elements.inputArea.contains(e.target)) closeAutocomplete();
+        });
+
+        initGame();
+    </script>
+</body>
+</html>
