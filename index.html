@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -122,7 +122,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Input Area (Moved Up) */
+        /* Input Area */
         #inputArea {
             width: 100%;
             max-width: 500px;
@@ -194,11 +194,25 @@
             transition: transform 0.1s, opacity 0.2s;
         }
 
-        button#guessBtn:hover {
-            opacity: 0.9;
+        button#guessBtn:hover { opacity: 0.9; }
+        button#guessBtn:active { transform: scale(0.95); }
+
+        button#giveUpBtn {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 4px 12px;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        button#guessBtn:active { transform: scale(0.95); }
+        button#giveUpBtn:hover {
+            border-color: var(--red-text);
+            color: var(--red-text);
+        }
 
         /* Legend */
         .legend {
@@ -509,24 +523,6 @@
             color: var(--bg-color);
         }
 
-        button#giveUpBtn {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 4px;
-            padding: 8px 16px;
-            font-family: var(--font-display);
-            font-size: 0.7rem;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: all 0.2s;
-        }
-
-        button#giveUpBtn:hover {
-            border-color: var(--red-text);
-            color: var(--red-text);
-        }
-
         /* Particles */
         .particle {
             position: fixed;
@@ -563,7 +559,7 @@
             <div class="tagline">Identify the mystery mineral</div>
         </header>
 
-                <div id="inputArea">
+        <div id="inputArea">
             <div id="alreadyGuessedHint">Already guessed</div>
             <div class="input-row">
                 <div class="input-wrap">
@@ -581,15 +577,15 @@
         <div id="hintsArea" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 500px; font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted);">
             <div id="hint1" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
                 <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 1 (Guess 5):</span>
-                <span id="hint1Text">[REDACTED]</span>
+                <span id="hint1Text">Common Habits</span>
             </div>
             <div id="hint2" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
                 <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 2 (Guess 7):</span>
-                <span id="hint2Text">[REDACTED]</span>
+                <span id="hint2Text">Mineral Associations</span>
             </div>
             <div id="hint3" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
                 <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 3 (Guess 9):</span>
-                <span id="hint3Text">[REDACTED]</span>
+                <span id="hint3Text">Etymology</span>
             </div>
         </div>
 
@@ -600,23 +596,15 @@
         </div>
 
         <div class="table-container">
-                        <div class="col-headers">
+            <div class="col-headers">
                 <div class="header-cell">Mineral</div>
                 <div class="header-cell">Hardness</div>
                 <div class="header-cell">Sp. Gravity</div>
                 <div class="header-cell">Luster</div>
                 <div class="header-cell">Crystal System</div>
                 <div class="header-cell">Chem. Group</div>
-                <div class="header-cell">Biref.</div>
-                <div class="header-cell">Opt. Class</div>
-            </div>
-                <div class="header-cell">Hardness</div>
-                <div class="header-cell">Sp. Gravity</div>
-                <div class="header-cell">Luster</div>
-                <div class="header-cell">Crystal System</div>
-                <div class="header-cell">Chem. Group</div>
-                <div class="header-cell">Mindat</div>
-                <div class="header-cell">Fact</div>
+                <div class="header-cell">Birefringence</div>
+                <div class="header-cell">Optical Class</div>
             </div>
 
             <div id="guessTable">
@@ -625,7 +613,7 @@
         </div>
     </div>
 
-        <div id="modal" role="dialog" aria-modal="true">
+    <div id="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
             <span id="modalResultLabel"></span>
             <div id="modalMineralName"></div>
@@ -658,8 +646,7 @@
         </div>
     </div>
 
-    <script>
-        const MINERALS = [
+    <script>const MINERALS = [
   {
     "name": "Quartz",
     "formula": "SiO₂",
@@ -2629,7 +2616,6 @@
     "habit": "Tabular crystals; characteristic cockscomb and spear-shaped twins; also stalactitic, nodular, or as replacements of fossils (pyrite disease)"
   }
 ];
-
         let state = {
             answer: null,
             guesses: [],
@@ -2639,7 +2625,7 @@
 
         const BIRE_ORDER = ["None", "Weak", "Moderate", "Strong", "Extreme"];
 
-                const elements = {
+        const elements = {
             guessTable: document.getElementById('guessTable'),
             guessInput: document.getElementById('guessInput'),
             guessBtn: document.getElementById('guessBtn'),
@@ -2666,7 +2652,7 @@
             modalHint3: document.getElementById('modalHint3')
         };
 
-                function initGame(isDaily = true) {
+        function initGame(isDaily = true) {
             if (isDaily) {
                 const now = new Date();
                 const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
@@ -2685,31 +2671,14 @@
             elements.modal.style.opacity = '0';
             elements.modalImage.style.display = 'none';
             
-            elements.hint1Text.textContent = 'Hint 1 (GUESS 5): Common Habits';
-            elements.hint2Text.textContent = 'Hint 2 (GUESS 7): Mineral Associations';
-            elements.hint3Text.textContent = 'Hint 3 (GUESS 9): Etymology';
+            elements.hint1Text.textContent = 'Common Habits';
+            elements.hint2Text.textContent = 'Mineral Associations';
+            elements.hint3Text.textContent = 'Etymology';
             
-            updateGuessCounter();
-        } else {
-                state.answer = MINERALS[Math.floor(Math.random() * MINERALS.length)];
-            }
-            
-            state.guesses = [];
-            state.gameOver = false;
-            state.won = false;
-            
-            elements.guessTable.innerHTML = '<div class="empty-prompt">Type a mineral name to begin...</div>';
-            elements.guessInput.value = '';
-            elements.modal.style.display = 'none';
-            elements.modal.style.opacity = '0';
-            elements.modalImage.style.display = 'none';
-            elements.hint1Text.textContent = '[REDACTED]';
-            elements.hint2Text.textContent = '[REDACTED]';
-            elements.hint3Text.textContent = '[REDACTED]';
             updateGuessCounter();
         }
 
-                function updateGuessCounter() {
+        function updateGuessCounter() {
             const count = state.guesses.length;
             elements.guessCounter.textContent = `Guess ${count + 1} — No limit`;
             
@@ -2733,11 +2702,6 @@
             } else {
                 elements.hint3Text.parentElement.style.color = 'var(--text-muted)';
             }
-        } — No limit`;
-            
-            if (count >= 5) elements.hint1Text.textContent = state.answer.habit;
-            if (count >= 7) elements.hint2Text.textContent = state.answer.associations.join(', ');
-            if (count >= 9) elements.hint3Text.textContent = state.answer.etymology;
         }
 
         // Autocomplete Logic
@@ -2800,7 +2764,7 @@
                 item.setAttribute('role', 'option');
                 item.dataset.name = m.name;
                 
-                const regex = new RegExp(`(${query})`, 'gi');
+                const regex = new RegExp('(' + query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ')', 'gi');
                 item.innerHTML = m.name.replace(regex, '<mark>$1</mark>');
                 
                 item.addEventListener('click', () => submitGuess(m.name));
@@ -2862,7 +2826,7 @@
             setTimeout(() => elements.guessInput.parentElement.classList.remove('shake'), 400);
         }
 
-                function evaluateGuess(guess) {
+        function evaluateGuess(guess) {
             state.guesses.push(guess.name);
             const ans = state.answer;
             
@@ -2880,22 +2844,6 @@
             renderRow(results);
 
             const isWin = results.slice(1).every(r => r.status === 'green');
-            if (isWin) {
-                endGame(true);
-            }
-        },
-                compareNumeric(guess.hardness, ans.hardness),
-                compareNumeric(guess.specificGravity, ans.specificGravity, 0.3),
-                compareCategorical(guess.luster, ans.luster),
-                compareCategorical(guess.crystalSystem, ans.crystalSystem),
-                compareCategorical(guess.chemicalGroup, ans.chemicalGroup),
-                { val: "Link", url: guess.mindatUrl, status: 'mindat' },
-                { val: "Info", fact: guess.funFact, status: 'fact' }
-            ];
-
-            renderRow(results);
-
-            const isWin = results.slice(1, 6).every(r => r.status === 'green');
             if (isWin) {
                 endGame(true);
             }
@@ -2932,14 +2880,14 @@
             return { val: displayVal, status: 'red', icon: '✗' };
         }
 
-                function renderRow(results) {
+        function renderRow(results) {
             const row = document.createElement('div');
             row.className = 'guess-row';
             
             results.forEach((res, i) => {
                 const cell = document.createElement('div');
-                cell.className = `cell ${res.status}`;
-                cell.style.animationDelay = `${i * 0.08}s`;
+                cell.className = 'cell ' + (res.status === 'name' ? 'name-cell' : res.status);
+                cell.style.animationDelay = (i * 0.08) + 's';
                 
                 const valSpan = document.createElement('span');
                 valSpan.className = 'cell-value';
@@ -2964,52 +2912,9 @@
             });
 
             elements.guessTable.prepend(row);
-        }`;
-                cell.style.animationDelay = `${i * 0.08}s`;
-                
-                if (res.status === 'mindat') {
-                    const link = document.createElement('a');
-                    link.href = res.url;
-                    link.target = '_blank';
-                    link.textContent = '🔗';
-                    link.style.textDecoration = 'none';
-                    link.style.fontSize = '1.2rem';
-                    cell.appendChild(link);
-                } else if (res.status === 'fact') {
-                    const info = document.createElement('span');
-                    info.textContent = 'ℹ️';
-                    info.title = res.fact;
-                    info.style.cursor = 'help';
-                    info.style.fontSize = '1.2rem';
-                    cell.appendChild(info);
-                } else {
-                    const valSpan = document.createElement('span');
-                    valSpan.className = 'cell-value';
-                    valSpan.textContent = res.val;
-                    cell.appendChild(valSpan);
-
-                    if (res.formula) {
-                        const formSpan = document.createElement('span');
-                        formSpan.className = 'cell-formula';
-                        formSpan.textContent = res.formula;
-                        cell.appendChild(formSpan);
-                    }
-                    
-                    if (res.icon) {
-                        const iconSpan = document.createElement('span');
-                        iconSpan.className = 'cell-icon';
-                        iconSpan.textContent = res.icon;
-                        cell.appendChild(iconSpan);
-                    }
-                }
-                
-                row.appendChild(cell);
-            });
-
-            elements.guessTable.prepend(row);
         }
 
-                async function endGame(won) {
+        async function endGame(won) {
             state.gameOver = true;
             state.won = won;
 
@@ -3017,7 +2922,7 @@
 
             // Fetch Image
             try {
-                const wikiRes = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${state.answer.wikiTitle}`);
+                const wikiRes = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(state.answer.wikiTitle));
                 const wikiData = await wikiRes.json();
                 if (wikiData.thumbnail && wikiData.thumbnail.source) {
                     elements.modalImage.src = wikiData.thumbnail.source;
@@ -3044,7 +2949,7 @@
 
                 elements.modalMindatLink.href = state.answer.mindatUrl;
                 elements.modalScoreLine.textContent = won 
-                    ? `Solved in ${state.guesses.length} guesses` 
+                    ? 'Solved in ' + state.guesses.length + ' guesses' 
                     : '';
                 
                 elements.modal.style.display = 'flex';
@@ -3059,7 +2964,7 @@
                 p.style.left = Math.random() * 100 + 'vw';
                 p.style.top = '-20px';
                 p.style.backgroundColor = Math.random() > 0.5 ? 'var(--accent-gold)' : 'var(--green-text)';
-                p.style.animation = `particleFall ${2 + Math.random() * 2}s linear forwards`;
+                p.style.animation = 'particleFall ' + (2 + Math.random() * 2) + 's linear forwards';
                 document.body.appendChild(p);
                 setTimeout(() => p.remove(), 4000);
             }
@@ -3078,5 +2983,3 @@
     </script>
 </body>
 </html>
-
-
