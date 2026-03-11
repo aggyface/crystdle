@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRYSTDLE — Daily Mineral Guessing Game</title>
+    
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
     <meta name="description" content="A daily mineral guessing game. Identify the mystery mineral using chemical and physical properties.">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- CSS VARIABLES & GLOBAL STYLES --- */
         :root {
             --bg-color: #08080b;
             --accent-gold: #c8a84b;
@@ -47,7 +52,7 @@
             align-items: center;
         }
 
-        /* Ambient Glow Blobs */
+        /* --- BACKGROUND EFFECTS --- */
         .glow-blob {
             position: fixed;
             width: 40vw;
@@ -58,18 +63,9 @@
             z-index: -1;
             pointer-events: none;
         }
-        .glow-gold {
-            top: -10%;
-            right: -10%;
-            background: var(--accent-gold);
-        }
-        .glow-green {
-            bottom: -10%;
-            left: -10%;
-            background: var(--green-text);
-        }
+        .glow-gold { top: -10%; right: -10%; background: var(--accent-gold); }
+        .glow-green { bottom: -10%; left: -10%; background: var(--green-text); }
 
-        /* Grain Texture */
         body::before {
             content: "";
             position: fixed;
@@ -83,6 +79,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
+        /* --- LAYOUT WRAPPER --- */
         .wrap {
             width: 100%;
             max-width: 1200px;
@@ -122,7 +119,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Input Area */
+        /* --- INPUT & CONTROLS --- */
         #inputArea {
             width: 100%;
             max-width: 500px;
@@ -177,9 +174,7 @@
             transition: border-color 0.2s;
         }
 
-        input:focus {
-            border-color: var(--accent-gold);
-        }
+        input:focus { border-color: var(--accent-gold); }
 
         button#guessBtn {
             background: var(--accent-gold);
@@ -214,7 +209,7 @@
             color: var(--red-text);
         }
 
-        /* Legend */
+        /* --- LEGEND & HINTS --- */
         .legend {
             display: flex;
             gap: 1.5rem;
@@ -224,21 +219,40 @@
             text-transform: uppercase;
             letter-spacing: 0.1rem;
         }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 2px;
-        }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+        .dot { width: 10px; height: 10px; border-radius: 2px; }
         .dot.green { background-color: var(--green-text); }
         .dot.red { background-color: var(--red-text); }
         .dot.gold { background-color: var(--accent-gold); }
 
-        /* Table */
+        #hintsArea {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            max-width: 500px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .hint-box {
+            background: rgba(255,255,255,0.02);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(200,168,75,0.1);
+        }
+
+        .hint-label {
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+
+        /* --- GAME TABLE --- */
         .table-container {
             width: 100%;
             overflow-x: auto;
@@ -321,9 +335,7 @@
             animation: flipIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
-        @keyframes flipIn {
-            to { transform: rotateX(0); }
-        }
+        @keyframes flipIn { to { transform: rotateX(0); } }
 
         .cell.name-cell {
             font-family: var(--font-display);
@@ -348,7 +360,7 @@
         .cell-value { display: block; }
         .cell-icon { font-size: 1.2rem; margin-top: 4px; }
 
-        /* Autocomplete */
+        /* --- AUTOCOMPLETE LIST --- */
         #autocomplete {
             position: absolute;
             bottom: calc(100% + 8px);
@@ -385,7 +397,7 @@
             text-decoration: underline;
         }
 
-        /* Modal */
+        /* --- MODAL DIALOG --- */
         #modal {
             position: fixed;
             top: 0;
@@ -424,9 +436,7 @@
         }
 
         @media (max-width: 600px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
+            .modal-body { grid-template-columns: 1fr; }
         }
 
         #modalImage {
@@ -481,10 +491,7 @@
             margin-bottom: 1.5rem;
         }
 
-        #modalHints p {
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
+        #modalHints p { margin-bottom: 0.75rem; line-height: 1.4; }
 
         #modalScoreLine {
             font-family: var(--font-display);
@@ -523,7 +530,7 @@
             color: var(--bg-color);
         }
 
-        /* Particles */
+        /* --- EFFECTS --- */
         .particle {
             position: fixed;
             width: 6px;
@@ -538,7 +545,6 @@
             100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Animations */
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
@@ -550,6 +556,7 @@
 </head>
 <body>
 
+    <!-- Background Decoration -->
     <div class="glow-blob glow-gold"></div>
     <div class="glow-blob glow-green"></div>
 
@@ -559,6 +566,7 @@
             <div class="tagline">Identify the mystery mineral</div>
         </header>
 
+        <!-- Main Input Section -->
         <div id="inputArea">
             <div id="alreadyGuessedHint">Already guessed</div>
             <div class="input-row">
@@ -574,27 +582,30 @@
             </div>
         </div>
 
-        <div id="hintsArea" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 500px; font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted);">
-            <div id="hint1" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
-                <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 1 (Guess 5):</span>
+        <!-- Hint Feedback Area -->
+        <div id="hintsArea">
+            <div id="hint1" class="hint-box">
+                <span class="hint-label">Hint 1 (Guess 5):</span>
                 <span id="hint1Text">Common Habits</span>
             </div>
-            <div id="hint2" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
-                <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 2 (Guess 7):</span>
+            <div id="hint2" class="hint-box">
+                <span class="hint-label">Hint 2 (Guess 7):</span>
                 <span id="hint2Text">Mineral Associations</span>
             </div>
-            <div id="hint3" style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.1);">
-                <span style="color: var(--accent-gold); font-family: var(--font-display); font-size: 0.75rem; text-transform: uppercase; margin-right: 8px;">Hint 3 (Guess 9):</span>
+            <div id="hint3" class="hint-box">
+                <span class="hint-label">Hint 3 (Guess 9):</span>
                 <span id="hint3Text">Etymology</span>
             </div>
         </div>
 
+        <!-- Gameplay Legend -->
         <div class="legend">
             <div class="legend-item"><div class="dot green"></div> Match</div>
             <div class="legend-item"><div class="dot red"></div> No Match</div>
             <div class="legend-item"><div class="dot gold"></div> Higher / Lower</div>
         </div>
 
+        <!-- Guess Results Table -->
         <div class="table-container">
             <div class="col-headers">
                 <div class="header-cell">Mineral</div>
@@ -613,18 +624,21 @@
         </div>
     </div>
 
+    <!-- Completion Modal -->
     <div id="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
             <span id="modalResultLabel"></span>
-            <div id="modalMineralName"></div>
+            <div id="modalMineralName" title="Hover for nerd fact"></div>
             <div id="modalFormula"></div>
             <div class="modal-divider"></div>
             
             <div class="modal-body">
+                <!-- Left Column: Media & Fun Fact -->
                 <div class="modal-col-left">
                     <img id="modalImage" src="" alt="" style="display:none">
                     <p id="modalFunFact"></p>
                 </div>
+                <!-- Right Column: Detailed Hints & Links -->
                 <div class="modal-col-right">
                     <div id="modalHints" style="font-size: 0.9rem; color: var(--text-muted);">
                         <p><strong>Habit:</strong> <span id="modalHint1"></span></p>
@@ -2616,6 +2630,7 @@
     "habit": "Tabular crystals; characteristic cockscomb and spear-shaped twins; also stalactitic, nodular, or as replacements of fossils (pyrite disease)"
   }
 ];
+        /* --- GAME STATE --- */
         let state = {
             answer: null,
             guesses: [],
@@ -2625,6 +2640,7 @@
 
         const BIRE_ORDER = ["None", "Weak", "Moderate", "Strong", "Extreme"];
 
+        /* --- DOM ELEMENTS --- */
         const elements = {
             guessTable: document.getElementById('guessTable'),
             guessInput: document.getElementById('guessInput'),
@@ -2652,6 +2668,10 @@
             modalHint3: document.getElementById('modalHint3')
         };
 
+        /**
+         * Initializes or restarts the game.
+         * @param {boolean} isDaily - Whether to use the daily mineral based on date.
+         */
         function initGame(isDaily = true) {
             if (isDaily) {
                 const now = new Date();
@@ -2671,6 +2691,7 @@
             elements.modal.style.opacity = '0';
             elements.modalImage.style.display = 'none';
             
+            // Reset hint labels
             elements.hint1Text.textContent = 'Common Habits';
             elements.hint2Text.textContent = 'Mineral Associations';
             elements.hint3Text.textContent = 'Etymology';
@@ -2678,10 +2699,14 @@
             updateGuessCounter();
         }
 
+        /**
+         * Updates the UI guess counter and reveals hints if thresholds are met.
+         */
         function updateGuessCounter() {
             const count = state.guesses.length;
             elements.guessCounter.textContent = `Guess ${count + 1} — No limit`;
             
+            // Reveal Hints based on guess count
             if (count >= 5) {
                 elements.hint1Text.textContent = state.answer.habit;
                 elements.hint1Text.parentElement.style.color = 'var(--text-main)';
@@ -2704,12 +2729,13 @@
             }
         }
 
-        // Autocomplete Logic
+        /* --- AUTOCOMPLETE LOGIC --- */
         let selectedIndex = -1;
 
         elements.guessInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
             
+            // Show "already guessed" feedback
             if (state.guesses.some(g => g.toLowerCase() === query)) {
                 elements.alreadyGuessedHint.style.opacity = '1';
             } else {
@@ -2764,6 +2790,7 @@
                 item.setAttribute('role', 'option');
                 item.dataset.name = m.name;
                 
+                // Highlight matching text
                 const regex = new RegExp('(' + query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ')', 'gi');
                 item.innerHTML = m.name.replace(regex, '<mark>$1</mark>');
                 
@@ -2791,7 +2818,12 @@
             selectedIndex = -1;
         }
 
-        // Guess Logic
+        /* --- CORE GAME LOGIC --- */
+
+        /**
+         * Validates and processes a user guess.
+         * @param {string} name - The mineral name guessed.
+         */
         function submitGuess(name) {
             if (state.gameOver || !name) return;
             
@@ -2826,6 +2858,9 @@
             setTimeout(() => elements.guessInput.parentElement.classList.remove('shake'), 400);
         }
 
+        /**
+Evaluation logic for a guess against the answer.
+         */
         function evaluateGuess(guess) {
             state.guesses.push(guess.name);
             const ans = state.answer;
@@ -2843,11 +2878,14 @@
 
             renderRow(results);
 
+            // Win condition: all property cells (excluding name) are green
             const isWin = results.slice(1).every(r => r.status === 'green');
             if (isWin) {
                 endGame(true);
             }
         }
+
+        /* --- COMPARISON HELPERS --- */
 
         function compareNumeric(val, target, tolerance = 0) {
             if (Math.abs(val - target) <= tolerance) return { val, status: 'green', icon: '✓' };
@@ -2880,6 +2918,11 @@
             return { val: displayVal, status: 'red', icon: '✗' };
         }
 
+        /* --- UI RENDERING --- */
+
+        /**
+         * Renders a row of results in the guess table.
+         */
         function renderRow(results) {
             const row = document.createElement('div');
             row.className = 'guess-row';
@@ -2914,13 +2957,17 @@
             elements.guessTable.prepend(row);
         }
 
+        /**
+         * Triggers game end sequence (Win or Give Up).
+         * @param {boolean} won - Whether the user successfully identified the mineral.
+         */
         async function endGame(won) {
             state.gameOver = true;
             state.won = won;
 
             if (won) spawnParticles();
 
-            // Fetch Image
+            // Fetch high-quality Wikipedia thumbnail
             try {
                 const wikiRes = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(state.answer.wikiTitle));
                 const wikiData = await wikiRes.json();
@@ -2936,6 +2983,7 @@
                 elements.modalImage.style.display = 'none';
             }
 
+            // Reveal modal with a slight delay
             setTimeout(() => {
                 elements.modalResultLabel.textContent = won ? 'IDENTIFIED' : 'THE ANSWER WAS';
                 elements.modalMineralName.textContent = state.answer.name;
@@ -2957,6 +3005,9 @@
             }, 500);
         }
 
+        /**
+         * Victory celebration effect.
+         */
         function spawnParticles() {
             for (let i = 0; i < 50; i++) {
                 const p = document.createElement('div');
@@ -2970,15 +3021,18 @@
             }
         }
 
+        /* --- EVENT LISTENERS --- */
         elements.guessBtn.addEventListener('click', () => submitGuess(elements.guessInput.value));
         elements.giveUpBtn.addEventListener('click', () => endGame(false));
         elements.playAgainBtn.addEventListener('click', () => initGame(true));
         elements.newGameBtn.addEventListener('click', () => initGame(false));
         
+        // Close autocomplete when clicking outside
         document.addEventListener('click', (e) => {
             if (!elements.inputArea.contains(e.target)) closeAutocomplete();
         });
 
+        // Initialize game on load
         initGame();
     </script>
 </body>
