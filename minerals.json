@@ -12,7 +12,16 @@
     "funFact": "Quartz is the second most abundant mineral in Earth's continental crust.",
     "mindatUrl": "https://www.mindat.org/min-3337.html",
     "wikiTitle": "Quartz",
-    "nerdFact": "Quartz crystals exhibit piezoelectricity — squeeze one and it generates a measurable voltage. This property is why quartz oscillators keep time in almost every electronic clock and watch ever made, vibrating at exactly 32,768 Hz."
+    "nerdFact": "Quartz crystals exhibit piezoelectricity — squeeze one and it generates a measurable voltage. This property is why quartz oscillators keep time in almost every electronic clock and watch ever made, vibrating at exactly 32,768 Hz.",
+    "etymology": "From German 'Quarz', origin disputed — possibly from Slavic 'tvrdý' (hard) or Middle High German 'querch' (dwarf, cross-grained)",
+    "associations": [
+      "Feldspar",
+      "Muscovite",
+      "Tourmaline",
+      "Calcite",
+      "Pyrite"
+    ],
+    "habit": "Six-sided prisms terminated by rhombohedral faces; also massive, granular, drusy, and fibrous (chalcedony)"
   },
   {
     "name": "Scapolite",
@@ -27,7 +36,16 @@
     "funFact": "Often found in metamorphic rocks, it can show beautiful fluorescence under UV light.",
     "mindatUrl": "https://www.mindat.org/min-3571.html",
     "wikiTitle": "Scapolite",
-    "nerdFact": "Scapolite forms a complete solid solution series between marialite (Na-rich) and meionite (Ca-rich), yet the two end-members were described as separate minerals for over a century before anyone realized they were the same thing."
+    "nerdFact": "Scapolite forms a complete solid solution series between marialite (Na-rich) and meionite (Ca-rich), yet the two end-members were described as separate minerals for over a century before anyone realized they were the same thing.",
+    "etymology": "From Greek 'skapos' (rod, shaft) + 'lithos' (stone), referring to its long prismatic crystal habit",
+    "associations": [
+      "Calcite",
+      "Diopside",
+      "Tremolite",
+      "Garnet",
+      "Titanite"
+    ],
+    "habit": "Stout tetragonal prisms with pyramidal terminations; commonly massive or granular in metamorphic rocks"
   },
   {
     "name": "Nepheline",
@@ -42,7 +60,16 @@
     "funFact": "A common silica-undersaturated mineral that never occurs in rocks with quartz.",
     "mindatUrl": "https://www.mindat.org/min-2880.html",
     "wikiTitle": "Nepheline",
-    "nerdFact": "Nepheline is thermodynamically incompatible with quartz — if they ever touch in a melt, they react and annihilate each other. Finding nepheline in a rock is therefore proof that the magma was silica-undersaturated when it crystallized."
+    "nerdFact": "Nepheline is thermodynamically incompatible with quartz — if they ever touch in a melt, they react and annihilate each other. Finding nepheline in a rock is therefore proof that the magma was silica-undersaturated when it crystallized.",
+    "etymology": "From Greek 'nephele' (cloud), because it turns cloudy white when immersed in strong acid",
+    "associations": [
+      "Sodalite",
+      "Augite",
+      "Hornblende",
+      "Biotite",
+      "Titanite"
+    ],
+    "habit": "Short hexagonal prisms or tabular; usually massive or as anhedral grains in igneous rocks"
   },
   {
     "name": "Sodalite",
@@ -57,7 +84,16 @@
     "funFact": "Famous for its rich royal blue color, often used as an ornamental gemstone.",
     "mindatUrl": "https://www.mindat.org/min-3701.html",
     "wikiTitle": "Sodalite",
-    "nerdFact": "A variety called hackmanite is tenebrescent — it turns pink in UV light, then bleaches back to white in sunlight, and the cycle can be repeated indefinitely. The mechanism involves reversible electron transfer between sulfur and chlorine defects."
+    "nerdFact": "A variety called hackmanite is tenebrescent — it turns pink in UV light, then bleaches back to white in sunlight, and the cycle can be repeated indefinitely. The mechanism involves reversible electron transfer between sulfur and chlorine defects.",
+    "etymology": "From English 'soda' (sodium content) + Greek 'lithos' (stone), named in 1811 by Thomas Thomson",
+    "associations": [
+      "Nepheline",
+      "Cancrinite",
+      "Biotite",
+      "Augite",
+      "Titanite"
+    ],
+    "habit": "Dodecahedra or massive; rarely as well-formed crystals; typically as anhedral grains in syenites"
   },
   {
     "name": "Stilbite",
@@ -72,7 +108,16 @@
     "funFact": "A zeolite mineral that often forms beautiful bow-tie shaped crystal aggregates.",
     "mindatUrl": "https://www.mindat.org/min-3784.html",
     "wikiTitle": "Stilbite",
-    "nerdFact": "Stilbite is a zeolite, meaning its aluminosilicate framework is riddled with sub-nanometer channels that can act as molecular sieves — trapping molecules below a certain size while letting others pass through. The same structure lets it reversibly absorb and release water without collapsing."
+    "nerdFact": "Stilbite is a zeolite, meaning its aluminosilicate framework is riddled with sub-nanometer channels that can act as molecular sieves — trapping molecules below a certain size while letting others pass through. The same structure lets it reversibly absorb and release water without collapsing.",
+    "etymology": "From Greek 'stilbein' (to glitter, to shine), referring to its pearly to vitreous lustre on cleavage faces",
+    "associations": [
+      "Heulandite",
+      "Chabazite",
+      "Apophyllite",
+      "Calcite",
+      "Prehnite"
+    ],
+    "habit": "Characteristic bow-tie or sheaf-like aggregates (cruciform twins); also tabular or platy"
   },
   {
     "name": "Anorthite",
@@ -87,7 +132,16 @@
     "funFact": "The calcium-rich endmember of the plagioclase feldspar series.",
     "mindatUrl": "https://www.mindat.org/min-246.html",
     "wikiTitle": "Anorthite",
-    "nerdFact": "Anorthite is the dominant mineral in anorthosite, which makes up the bright highland regions of the Moon. The lunar highlands are essentially a fossilized magma ocean crust that solidified 4.4 billion years ago — among the oldest solid material in the solar system."
+    "nerdFact": "Anorthite is the dominant mineral in anorthosite, which makes up the bright highland regions of the Moon. The lunar highlands are essentially a fossilized magma ocean crust that solidified 4.4 billion years ago — among the oldest solid material in the solar system.",
+    "etymology": "From Greek 'an' (not) + 'orthos' (right, straight), referring to its oblique cleavage angles unlike orthoclase",
+    "associations": [
+      "Albite",
+      "Augite",
+      "Olivine",
+      "Magnetite",
+      "Ilmenite"
+    ],
+    "habit": "Tabular or prismatic crystals; commonly lamellar twinning (polysynthetic); often massive in gabbros"
   },
   {
     "name": "Albite",
@@ -102,7 +156,16 @@
     "funFact": "The sodium-rich endmember of the plagioclase feldspar series.",
     "mindatUrl": "https://www.mindat.org/min-96.html",
     "wikiTitle": "Albite",
-    "nerdFact": "Albite frequently forms 'peristerite' intergrowths with oligoclase at the nanometer scale, producing a ghostly blue adularescence known as peristerescence. The optical effect arises from interference of light scattered between ultra-thin alternating layers."
+    "nerdFact": "Albite frequently forms 'peristerite' intergrowths with oligoclase at the nanometer scale, producing a ghostly blue adularescence known as peristerescence. The optical effect arises from interference of light scattered between ultra-thin alternating layers.",
+    "etymology": "From Latin 'albus' (white), referring to its characteristically white colour",
+    "associations": [
+      "Microcline",
+      "Quartz",
+      "Muscovite",
+      "Tourmaline",
+      "Lepidolite"
+    ],
+    "habit": "Tabular crystals flattened on {010}; characteristic polysynthetic (albite) twinning; also massive, cleavable"
   },
   {
     "name": "Microcline",
@@ -117,7 +180,16 @@
     "funFact": "Famous for its 'tartan' twinning visible under a polarizing microscope.",
     "mindatUrl": "https://www.mindat.org/min-2690.html",
     "wikiTitle": "Microcline",
-    "nerdFact": "Microcline's famous 'tartan' cross-hatch twinning under crossed polars is a direct record of a structural phase transition — it was once monoclinic orthoclase, then slowly cooled below ~400°C and the symmetry broke, forcing it to twin its way into triclinic order."
+    "nerdFact": "Microcline's famous 'tartan' cross-hatch twinning under crossed polars is a direct record of a structural phase transition — it was once monoclinic orthoclase, then slowly cooled below ~400°C and the symmetry broke, forcing it to twin its way into triclinic order.",
+    "etymology": "From Greek 'mikros' (small) + 'klinein' (to lean), referring to the small deviation of cleavage angles from 90°",
+    "associations": [
+      "Albite",
+      "Quartz",
+      "Muscovite",
+      "Biotite",
+      "Tourmaline"
+    ],
+    "habit": "Short prismatic or tabular; characteristic grid or tartan cross-hatch twinning; often as large phenocrysts"
   },
   {
     "name": "Orthoclase",
@@ -132,7 +204,16 @@
     "funFact": "One of the defining minerals of the Mohs scale, representing hardness 6.",
     "mindatUrl": "https://www.mindat.org/min-3026.html",
     "wikiTitle": "Orthoclase",
-    "nerdFact": "Adularia, a variety of orthoclase, produces the optical phenomenon of adularescence — the internal billowing blue glow of moonstone — caused by scattering of light within alternating lamellae of albite and orthoclase only 5–10 nm thick."
+    "nerdFact": "Adularia, a variety of orthoclase, produces the optical phenomenon of adularescence — the internal billowing blue glow of moonstone — caused by scattering of light within alternating lamellae of albite and orthoclase only 5–10 nm thick.",
+    "etymology": "From Greek 'orthos' (straight, right) + 'klasis' (fracture), referring to its two cleavages at right angles",
+    "associations": [
+      "Quartz",
+      "Albite",
+      "Muscovite",
+      "Biotite",
+      "Hornblende"
+    ],
+    "habit": "Short prismatic Carlsbad twins very common; also tabular, massive, or as large phenocrysts in granites"
   },
   {
     "name": "Sanidine",
@@ -147,7 +228,16 @@
     "funFact": "The high-temperature form of potassium feldspar, common in volcanic rocks.",
     "mindatUrl": "https://www.mindat.org/min-3521.html",
     "wikiTitle": "Sanidine",
-    "nerdFact": "Because sanidine crystallizes at high temperature and quenches quickly in volcanic flows, it is the preferred mineral for high-precision ⁴⁰Ar/³⁹Ar geochronology. Single sanidine crystals have been dated to within ±1,000 years on eruptions tens of millions of years old."
+    "nerdFact": "Because sanidine crystallizes at high temperature and quenches quickly in volcanic flows, it is the preferred mineral for high-precision ⁴⁰Ar/³⁹Ar geochronology. Single sanidine crystals have been dated to within ±1,000 years on eruptions tens of millions of years old.",
+    "etymology": "From Greek 'sanis' (board, plank) + 'idos' (form), referring to its tabular or board-like crystal habit",
+    "associations": [
+      "Augite",
+      "Hornblende",
+      "Biotite",
+      "Magnetite",
+      "Apatite"
+    ],
+    "habit": "Tabular to platy crystals, often as phenocrysts in volcanic rocks; Carlsbad twins common"
   },
   {
     "name": "Kaolinite",
@@ -162,7 +252,16 @@
     "funFact": "A primary ingredient in the production of porcelain and fine china.",
     "mindatUrl": "https://www.mindat.org/min-2152.html",
     "wikiTitle": "Kaolinite",
-    "nerdFact": "Kaolinite's 1:1 layer structure means its sheets are held together only by hydrogen bonds and van der Waals forces — which is why it is so soft and slippery. It is also the mineral responsible for the distinctive earthy smell after rain, called petrichor, when volatile organic compounds adsorbed onto its surface are released."
+    "nerdFact": "Kaolinite's 1:1 layer structure means its sheets are held together only by hydrogen bonds and van der Waals forces — which is why it is so soft and slippery. It is also the mineral responsible for the distinctive earthy smell after rain, called petrichor, when volatile organic compounds adsorbed onto its surface are released.",
+    "etymology": "From Chinese 'Gaoling' (high hill/ridge), the name of the hill in Jiangxi Province, China where it was first described",
+    "associations": [
+      "Quartz",
+      "Muscovite",
+      "Halloysite",
+      "Gibbsite",
+      "Anatase"
+    ],
+    "habit": "Microscopic pseudohexagonal platelets; typically earthy, compact, or as soft powdery masses"
   },
   {
     "name": "Serpentine",
@@ -177,7 +276,16 @@
     "funFact": "Named for its snake-like green colors and scaly appearance.",
     "mindatUrl": "https://www.mindat.org/min-11135.html",
     "wikiTitle": "Serpentine_subgroup",
-    "nerdFact": "The serpentinization reaction — olivine + water → serpentine — releases enough heat and hydrogen gas to sustain chemolithotrophic microbial ecosystems kilometers underground with no sunlight. It may be one of the most ancient metabolic environments on Earth, and possibly on icy moons like Enceladus."
+    "nerdFact": "The serpentinization reaction — olivine + water → serpentine — releases enough heat and hydrogen gas to sustain chemolithotrophic microbial ecosystems kilometers underground with no sunlight. It may be one of the most ancient metabolic environments on Earth, and possibly on icy moons like Enceladus.",
+    "etymology": "From Latin 'serpentinus' (serpent rock), referring to its mottled green colour resembling snakeskin",
+    "associations": [
+      "Magnetite",
+      "Chromite",
+      "Talc",
+      "Chlorite",
+      "Olivine"
+    ],
+    "habit": "Typically massive, fibrous (chrysotile asbestos), or platy (lizardite); rarely as distinct crystals"
   },
   {
     "name": "Talc",
@@ -192,7 +300,16 @@
     "funFact": "The softest known mineral, defining 1 on the Mohs hardness scale.",
     "mindatUrl": "https://www.mindat.org/min-3875.html",
     "wikiTitle": "Talc",
-    "nerdFact": "Despite being the softest mineral, talc is chemically extraordinarily inert — it resists attack by strong acids and alkalis alike. Its softness comes not from weak bonds within each layer but from the complete absence of chemical bonding between layers."
+    "nerdFact": "Despite being the softest mineral, talc is chemically extraordinarily inert — it resists attack by strong acids and alkalis alike. Its softness comes not from weak bonds within each layer but from the complete absence of chemical bonding between layers.",
+    "etymology": "From Arabic 'talq' or Persian 'talk', via Medieval Latin 'talcum'; meaning uncertain, possibly related to a word for pure or fine",
+    "associations": [
+      "Serpentine",
+      "Chlorite",
+      "Magnetite",
+      "Tremolite",
+      "Dolomite"
+    ],
+    "habit": "Foliated or fibrous masses; rarely as tabular pseudohexagonal crystals; typically as soft greasy aggregates"
   },
   {
     "name": "Muscovite",
@@ -207,7 +324,16 @@
     "funFact": "Known as 'Isinglass', it was once used as a heat-resistant glass for ovens.",
     "mindatUrl": "https://www.mindat.org/min-2815.html",
     "wikiTitle": "Muscovite",
-    "nerdFact": "Muscovite's potassium content makes it ideal for K-Ar and ⁴⁰Ar/³⁹Ar geochronology. Because argon is a noble gas that cannot substitute into the crystal structure, any ⁴⁰Ar found inside a muscovite crystal must have come from radioactive decay of ⁴⁰K — giving a direct clock since the crystal last cooled below ~350°C."
+    "nerdFact": "Muscovite's potassium content makes it ideal for K-Ar and ⁴⁰Ar/³⁹Ar geochronology. Because argon is a noble gas that cannot substitute into the crystal structure, any ⁴⁰Ar found inside a muscovite crystal must have come from radioactive decay of ⁴⁰K — giving a direct clock since the crystal last cooled below ~350°C.",
+    "etymology": "From 'Muscovy glass' — large transparent sheets were used as window panes in Muscovy (medieval Russia) before glass",
+    "associations": [
+      "Quartz",
+      "Feldspar",
+      "Tourmaline",
+      "Lepidolite",
+      "Biotite"
+    ],
+    "habit": "Tabular pseudohexagonal books and plates with perfect basal cleavage; also fine-grained (sericite) or scaly"
   },
   {
     "name": "Biotite",
@@ -222,7 +348,16 @@
     "funFact": "The most common dark-colored mica, rich in iron and magnesium.",
     "mindatUrl": "https://www.mindat.org/min-677.html",
     "wikiTitle": "Biotite",
-    "nerdFact": "Biotite is one of the few minerals that can tell you the direction a meteor impact came from — shock waves produce planar deformation features in biotite at known orientations relative to the impactor trajectory, and these survive for billions of years."
+    "nerdFact": "Biotite is one of the few minerals that can tell you the direction a meteor impact came from — shock waves produce planar deformation features in biotite at known orientations relative to the impactor trajectory, and these survive for billions of years.",
+    "etymology": "Named in 1847 after French physicist Jean-Baptiste Biot, who studied the optical properties of micas",
+    "associations": [
+      "Quartz",
+      "Feldspar",
+      "Muscovite",
+      "Hornblende",
+      "Garnet"
+    ],
+    "habit": "Tabular to platy pseudohexagonal books; perfect basal cleavage into thin flexible sheets; also massive"
   },
   {
     "name": "Lepidolite",
@@ -237,7 +372,16 @@
     "funFact": "A lithium-rich mica often identified by its distinct lilac or pink color.",
     "mindatUrl": "https://www.mindat.org/min-2384.html",
     "wikiTitle": "Lepidolite",
-    "nerdFact": "Lepidolite was the mineral from which the element lithium was first isolated in 1817 by Johan August Arfwedson, who named the new element after the Greek word for stone — lithos — because unlike sodium and potassium (found in plants), lithium came from rock."
+    "nerdFact": "Lepidolite was the mineral from which the element lithium was first isolated in 1817 by Johan August Arfwedson, who named the new element after the Greek word for stone — lithos — because unlike sodium and potassium (found in plants), lithium came from rock.",
+    "etymology": "From Greek 'lepis' (scale) + 'lithos' (stone), referring to its scaly micaceous habit",
+    "associations": [
+      "Tourmaline",
+      "Spodumene",
+      "Albite",
+      "Topaz",
+      "Cassiterite"
+    ],
+    "habit": "Fine- to coarse-grained scaly or platy aggregates; rarely as distinct pseudohexagonal plates; often lilac-coloured"
   },
   {
     "name": "Chlorite",
@@ -252,7 +396,16 @@
     "funFact": "Gives many metamorphic rocks their characteristic green color.",
     "mindatUrl": "https://www.mindat.org/min-1016.html",
     "wikiTitle": "Chlorite_group",
-    "nerdFact": "Chlorite's anomalous interference colors — often a muddy brown or 'Berlin blue' — arise because its inherent birefringence nearly exactly cancels the form birefringence from its layered structure, leaving only an anomalous residual. Petrographers use this immediately to identify it in thin section."
+    "nerdFact": "Chlorite's anomalous interference colors — often a muddy brown or 'Berlin blue' — arise because its inherent birefringence nearly exactly cancels the form birefringence from its layered structure, leaving only an anomalous residual. Petrographers use this immediately to identify it in thin section.",
+    "etymology": "From Greek 'chloros' (green), referring to its characteristic green colour",
+    "associations": [
+      "Epidote",
+      "Actinolite",
+      "Biotite",
+      "Magnetite",
+      "Quartz"
+    ],
+    "habit": "Platy or scaly masses; pseudohexagonal plates with perfect basal cleavage; commonly as alteration of biotite or hornblende"
   },
   {
     "name": "Spodumene",
@@ -267,7 +420,16 @@
     "funFact": "An important source of lithium; its pink variety is known as Kunzite.",
     "mindatUrl": "https://www.mindat.org/min-3733.html",
     "wikiTitle": "Spodumene",
-    "nerdFact": "Spodumene undergoes a displacive phase transition at around 700°C from α-spodumene to β-spodumene with a ~30% volume expansion — a property that makes it almost impossible to fire ceramics containing spodumene without cracking unless the transition is carefully managed."
+    "nerdFact": "Spodumene undergoes a displacive phase transition at around 700°C from α-spodumene to β-spodumene with a ~30% volume expansion — a property that makes it almost impossible to fire ceramics containing spodumene without cracking unless the transition is carefully managed.",
+    "etymology": "From Greek 'spodumenos' (burnt to ashes), referring to its ashy grey colour in the common massive variety",
+    "associations": [
+      "Lepidolite",
+      "Tourmaline",
+      "Albite",
+      "Quartz",
+      "Columbite"
+    ],
+    "habit": "Long prismatic crystals, often striated; largest crystals can exceed 10m; commonly etched or altered to clay minerals"
   },
   {
     "name": "Tremolite",
@@ -282,7 +444,16 @@
     "funFact": "A member of the amphibole group that can form fibrous 'asbestos' crystals.",
     "mindatUrl": "https://www.mindat.org/min-4011.html",
     "wikiTitle": "Tremolite",
-    "nerdFact": "Tremolite in its fibrous asbestiform habit was used in talc mining regions for decades before its carcinogenicity was recognized — because fibrous tremolite can occur as a contaminant in talc ore bodies, it led to major public health controversies over cosmetic talcum powder in the 2000s."
+    "nerdFact": "Tremolite in its fibrous asbestiform habit was used in talc mining regions for decades before its carcinogenicity was recognized — because fibrous tremolite can occur as a contaminant in talc ore bodies, it led to major public health controversies over cosmetic talcum powder in the 2000s.",
+    "etymology": "Named in 1789 after the Val Tremola (trembling valley) in the St. Gotthard massif, Switzerland, where it was first described",
+    "associations": [
+      "Dolomite",
+      "Calcite",
+      "Talc",
+      "Diopside",
+      "Forsterite"
+    ],
+    "habit": "Bladed to long prismatic crystals; fibrous asbestiform variety; also radiating or granular aggregates"
   },
   {
     "name": "Actinolite",
@@ -297,7 +468,16 @@
     "funFact": "The green fibrous variety of this mineral is one of the types of asbestos.",
     "mindatUrl": "https://www.mindat.org/min-18.html",
     "wikiTitle": "Actinolite",
-    "nerdFact": "Nephrite jade — one of the two true jades — is almost entirely made of interlocking fibrous actinolite and tremolite crystals. Its legendary toughness (not hardness) comes from this felt-like microstructure, which causes cracks to deflect and branch rather than propagate."
+    "nerdFact": "Nephrite jade — one of the two true jades — is almost entirely made of interlocking fibrous actinolite and tremolite crystals. Its legendary toughness (not hardness) comes from this felt-like microstructure, which causes cracks to deflect and branch rather than propagate.",
+    "etymology": "From Greek 'aktis' (ray) + 'lithos' (stone), referring to its radiating fibrous crystal habit",
+    "associations": [
+      "Epidote",
+      "Chlorite",
+      "Albite",
+      "Calcite",
+      "Magnetite"
+    ],
+    "habit": "Long bladed or prismatic crystals, often in radiating aggregates; fibrous (byssolite); also massive (nephrite jade)"
   },
   {
     "name": "Hornblende",
@@ -312,7 +492,16 @@
     "funFact": "The most common amphibole mineral, typically found in dark igneous rocks.",
     "mindatUrl": "https://www.mindat.org/min-1930.html",
     "wikiTitle": "Hornblende",
-    "nerdFact": "Hornblende's two cleavage planes intersect at 56° and 124° — a fact so diagnostic that every geology student memorizes it to distinguish amphiboles from pyroxenes (which cleave at 87° and 93°, nearly right angles). This difference reflects fundamentally different chain topologies in the crystal structure."
+    "nerdFact": "Hornblende's two cleavage planes intersect at 56° and 124° — a fact so diagnostic that every geology student memorizes it to distinguish amphiboles from pyroxenes (which cleave at 87° and 93°, nearly right angles). This difference reflects fundamentally different chain topologies in the crystal structure.",
+    "etymology": "From German 'Horn' (horn) + 'blenden' (to blind/deceive), as it resembles ore minerals but yields no metal — a miners' term",
+    "associations": [
+      "Plagioclase",
+      "Biotite",
+      "Quartz",
+      "Magnetite",
+      "Titanite"
+    ],
+    "habit": "Short to long prismatic crystals with diamond-shaped cross-section; characteristic 56°/124° cleavage; also massive"
   },
   {
     "name": "Enstatite",
@@ -327,7 +516,16 @@
     "funFact": "A common pyroxene found in both terrestrial rocks and stony meteorites.",
     "mindatUrl": "https://www.mindat.org/min-1384.html",
     "wikiTitle": "Enstatite",
-    "nerdFact": "Enstatite achondrite meteorites preserve the most reduced mineralogy in the solar system — some contain native silicon metal and minerals that cannot form in the presence of even trace oxygen. They are thought to originate from a parent body that formed in the innermost, most reducing part of the early solar nebula."
+    "nerdFact": "Enstatite achondrite meteorites preserve the most reduced mineralogy in the solar system — some contain native silicon metal and minerals that cannot form in the presence of even trace oxygen. They are thought to originate from a parent body that formed in the innermost, most reducing part of the early solar nebula.",
+    "etymology": "From Greek 'enstates' (opponent, resistor), referring to its high melting point and resistance to fusion",
+    "associations": [
+      "Olivine",
+      "Diopside",
+      "Chromite",
+      "Plagioclase",
+      "Magnetite"
+    ],
+    "habit": "Short prismatic crystals; usually massive or lamellar; orthopyroxene exsolution lamellae common in slowly cooled rocks"
   },
   {
     "name": "Diopside",
@@ -342,7 +540,16 @@
     "funFact": "A common pyroxene; Chrome Diopside is used as a vivid green gemstone.",
     "mindatUrl": "https://www.mindat.org/min-1294.html",
     "wikiTitle": "Diopside",
-    "nerdFact": "A violet variety of diopside called violan was once used as a gemstone but is now effectively unavailable — the single known locality in Piedmont, Italy was exhausted in the 19th century and the mineral has essentially vanished from the market."
+    "nerdFact": "A violet variety of diopside called violan was once used as a gemstone but is now effectively unavailable — the single known locality in Piedmont, Italy was exhausted in the 19th century and the mineral has essentially vanished from the market.",
+    "etymology": "From Greek 'di' (two, double) + 'opsis' (appearance, view), referring to the two orientations of its prism zone",
+    "associations": [
+      "Tremolite",
+      "Grossular",
+      "Wollastonite",
+      "Calcite",
+      "Titanite"
+    ],
+    "habit": "Short to long prismatic crystals; simple and polysynthetic twins common; also granular or massive in metamorphic rocks"
   },
   {
     "name": "Augite",
@@ -357,7 +564,16 @@
     "funFact": "The most common pyroxene, forming the bulk of basaltic lava flows.",
     "mindatUrl": "https://www.mindat.org/min-419.html",
     "wikiTitle": "Augite",
-    "nerdFact": "Augite frequently contains exsolution lamellae of orthopyroxene on the {001} plane, recording a slow cooling history. The thickness of these lamellae — sometimes only tens of nanometers — can be used to calculate cooling rates of ancient plutonic rocks to within a few degrees per million years."
+    "nerdFact": "Augite frequently contains exsolution lamellae of orthopyroxene on the {001} plane, recording a slow cooling history. The thickness of these lamellae — sometimes only tens of nanometers — can be used to calculate cooling rates of ancient plutonic rocks to within a few degrees per million years.",
+    "etymology": "From Greek 'auge' (brilliance, lustre), referring to its shiny cleavage faces",
+    "associations": [
+      "Plagioclase",
+      "Olivine",
+      "Magnetite",
+      "Ilmenite",
+      "Hornblende"
+    ],
+    "habit": "Short stout prismatic crystals with octagonal cross-section; simple twins on {100}; also massive or granular"
   },
   {
     "name": "Wollastonite",
@@ -372,7 +588,16 @@
     "funFact": "Named after chemist William Wollaston, it's used in ceramics and brake linings.",
     "mindatUrl": "https://www.mindat.org/min-4303.html",
     "wikiTitle": "Wollastonite",
-    "nerdFact": "Wollastonite forms at the contact between limestone and silica-rich magma via the reaction CaCO₃ + SiO₂ → CaSiO₃ + CO₂. The CO₂ released by this skarn-forming reaction is a measurable geological carbon source, and wollastonite carbonation is now being explored as a carbon capture strategy."
+    "nerdFact": "Wollastonite forms at the contact between limestone and silica-rich magma via the reaction CaCO₃ + SiO₂ → CaSiO₃ + CO₂. The CO₂ released by this skarn-forming reaction is a measurable geological carbon source, and wollastonite carbonation is now being explored as a carbon capture strategy.",
+    "etymology": "Named in 1818 after English chemist and mineralogist William Hyde Wollaston, who also discovered palladium and rhodium",
+    "associations": [
+      "Diopside",
+      "Grossular",
+      "Calcite",
+      "Epidote",
+      "Vesuvianite"
+    ],
+    "habit": "Tabular to prismatic crystals; typically cleavable masses, fibrous, or as rounded grains in skarn deposits"
   },
   {
     "name": "Beryl",
@@ -387,7 +612,16 @@
     "funFact": "Emerald and Aquamarine are both gemstone varieties of this mineral.",
     "mindatUrl": "https://www.mindat.org/min-565.html",
     "wikiTitle": "Beryl",
-    "nerdFact": "Pure beryl is colorless (goshenite). Every gemstone color variety — emerald (Cr³⁺), aquamarine (Fe²⁺), heliodor (Fe³⁺), morganite (Mn²⁺), red beryl (Mn³⁺) — comes from a different trace impurity substituting for aluminum. The beryllium itself contributes nothing to the color."
+    "nerdFact": "Pure beryl is colorless (goshenite). Every gemstone color variety — emerald (Cr³⁺), aquamarine (Fe²⁺), heliodor (Fe³⁺), morganite (Mn²⁺), red beryl (Mn³⁺) — comes from a different trace impurity substituting for aluminum. The beryllium itself contributes nothing to the color.",
+    "etymology": "From Greek 'beryllos', possibly derived from Sanskrit 'vaidurya' or Prakrit 'veluriya', referring to a blue-green gemstone",
+    "associations": [
+      "Tourmaline",
+      "Quartz",
+      "Feldspar",
+      "Columbite",
+      "Cassiterite"
+    ],
+    "habit": "Long hexagonal prisms, often striated parallel to c-axis; flat or complex terminations; crystals up to several metres long in pegmatites"
   },
   {
     "name": "Tourmaline",
@@ -402,7 +636,16 @@
     "funFact": "Famous for its pyroelectric properties, becoming electrically charged when heated.",
     "mindatUrl": "https://www.mindat.org/min-4003.html",
     "wikiTitle": "Tourmaline",
-    "nerdFact": "Tourmaline is the only common mineral with a boron-centered trigonal planar coordination site in its structure. Its formula is so complex it uses placeholder variables (X, Y, Z, T, B, V, W) in the official IMA definition — the full generalized formula spans 14 distinct crystallographic sites."
+    "nerdFact": "Tourmaline is the only common mineral with a boron-centered trigonal planar coordination site in its structure. Its formula is so complex it uses placeholder variables (X, Y, Z, T, B, V, W) in the official IMA definition — the full generalized formula spans 14 distinct crystallographic sites.",
+    "etymology": "From Sinhalese 'toramalli' or 'turmali', a term used for mixed coloured gems in Sri Lanka; introduced to Europe via Dutch traders",
+    "associations": [
+      "Quartz",
+      "Feldspar",
+      "Lepidolite",
+      "Beryl",
+      "Cassiterite"
+    ],
+    "habit": "Striated prismatic crystals with hemimorphic (different top and bottom) terminations; also radiating, massive, or columnar"
   },
   {
     "name": "Epidote",
@@ -417,7 +660,16 @@
     "funFact": "Easily identified by its characteristic pistachio-green color.",
     "mindatUrl": "https://www.mindat.org/min-1389.html",
     "wikiTitle": "Epidote",
-    "nerdFact": "Epidote is strongly pleochroic in thin section, cycling through yellow, green, and colorless as the stage is rotated — but in hand specimen this is invisible. This makes it a favorite teaching mineral in optical mineralogy because the property is so dramatically obvious under the microscope."
+    "nerdFact": "Epidote is strongly pleochroic in thin section, cycling through yellow, green, and colorless as the stage is rotated — but in hand specimen this is invisible. This makes it a favorite teaching mineral in optical mineralogy because the property is so dramatically obvious under the microscope.",
+    "etymology": "From Greek 'epidosis' (increase, addition), referring to one side of the prism base being longer than the other",
+    "associations": [
+      "Actinolite",
+      "Chlorite",
+      "Albite",
+      "Calcite",
+      "Quartz"
+    ],
+    "habit": "Prismatic crystals deeply striated parallel to b-axis; often in radiating or parallel groups; also massive or granular"
   },
   {
     "name": "Olivine",
@@ -432,7 +684,16 @@
     "funFact": "Primary component of Earth's upper mantle; its gem variety is Peridot.",
     "mindatUrl": "https://www.mindat.org/min-2983.html",
     "wikiTitle": "Olivine",
-    "nerdFact": "Fayalite (the iron end-member of olivine) is one of the few minerals found in natural glass inclusions inside other olivine crystals, trapping melt from the moment of crystallization. These melt inclusions are tiny time capsules of primary magma composition, preserving volatile contents that degassed long ago."
+    "nerdFact": "Fayalite (the iron end-member of olivine) is one of the few minerals found in natural glass inclusions inside other olivine crystals, trapping melt from the moment of crystallization. These melt inclusions are tiny time capsules of primary magma composition, preserving volatile contents that degassed long ago.",
+    "etymology": "Named for its characteristic olive-green colour; the gem variety peridot derives from Arabic 'faridat' (precious stone)",
+    "associations": [
+      "Pyroxene",
+      "Chromite",
+      "Magnetite",
+      "Spinel",
+      "Serpentine"
+    ],
+    "habit": "Anhedral grains in igneous rocks; euhedral crystals rare; typically as rounded or irregular grains in basalts and peridotites"
   },
   {
     "name": "Andalusite",
@@ -447,7 +708,16 @@
     "funFact": "The variety 'Chiastolite' contains carbon inclusions forming a dark cross.",
     "mindatUrl": "https://www.mindat.org/min-217.html",
     "wikiTitle": "Andalusite",
-    "nerdFact": "Chiastolite, the variety with a carbonaceous cross, forms because andalusite grows faster along its edges than corners during metamorphism, causing organic matter to accumulate in a cruciform pattern. Medieval pilgrims wore chiastolite crystals as protective amulets on the Camino de Santiago."
+    "nerdFact": "Chiastolite, the variety with a carbonaceous cross, forms because andalusite grows faster along its edges than corners during metamorphism, causing organic matter to accumulate in a cruciform pattern. Medieval pilgrims wore chiastolite crystals as protective amulets on the Camino de Santiago.",
+    "etymology": "Named in 1798 after Andalusia, Spain, where it was first described — though the original specimen was actually from Guadalajara",
+    "associations": [
+      "Kyanite",
+      "Sillimanite",
+      "Muscovite",
+      "Biotite",
+      "Quartz"
+    ],
+    "habit": "Coarse prismatic crystals with nearly square cross-section; chiastolite variety has carbonaceous cross inclusion; also massive"
   },
   {
     "name": "Kyanite",
@@ -462,7 +732,16 @@
     "funFact": "Unique for having two different hardnesses depending on crystal direction.",
     "mindatUrl": "https://www.mindat.org/min-2303.html",
     "wikiTitle": "Kyanite",
-    "nerdFact": "Kyanite's variable hardness — 4.5 parallel to the long axis, 6.5 perpendicular — arises from the directional weakness of Al-O bonds in its crystal structure. It is one of only two common minerals (the other being calcite's cleavage vs. fracture) that gives fundamentally different hardness readings depending on measurement direction."
+    "nerdFact": "Kyanite's variable hardness — 4.5 parallel to the long axis, 6.5 perpendicular — arises from the directional weakness of Al-O bonds in its crystal structure. It is one of only two common minerals (the other being calcite's cleavage vs. fracture) that gives fundamentally different hardness readings depending on measurement direction.",
+    "etymology": "From Greek 'kyanos' (dark blue), referring to its characteristic blue colour; also spelled cyanite in older literature",
+    "associations": [
+      "Staurolite",
+      "Garnet",
+      "Biotite",
+      "Quartz",
+      "Paragonite"
+    ],
+    "habit": "Long bladed crystals, typically blue with white margins; commonly bent or kinked; aggregates of flat blades in schists"
   },
   {
     "name": "Sillimanite",
@@ -477,7 +756,16 @@
     "funFact": "An indicator mineral for high-temperature metamorphic environments.",
     "mindatUrl": "https://www.mindat.org/min-3662.html",
     "wikiTitle": "Sillimanite",
-    "nerdFact": "The fibrolite variety of sillimanite forms mats of sub-millimeter fibers so fine they were once mistaken for a separate mineral. At extreme metamorphic grades, sillimanite grows as coarse prisms inside garnet porphyroblasts, recording a pressure-temperature path that geologists can decode like a geological flight recorder."
+    "nerdFact": "The fibrolite variety of sillimanite forms mats of sub-millimeter fibers so fine they were once mistaken for a separate mineral. At extreme metamorphic grades, sillimanite grows as coarse prisms inside garnet porphyroblasts, recording a pressure-temperature path that geologists can decode like a geological flight recorder.",
+    "etymology": "Named in 1824 after American chemist Benjamin Silliman, founder of the American Journal of Science",
+    "associations": [
+      "Garnet",
+      "Biotite",
+      "Kyanite",
+      "Quartz",
+      "Feldspar"
+    ],
+    "habit": "Long slender prismatic crystals; fibrolite variety forms silky matted fibres; often as needles within garnet or biotite"
   },
   {
     "name": "Staurolite",
@@ -492,7 +780,16 @@
     "funFact": "Often forms cruciform (cross-shaped) twinned crystals called 'fairy stones'.",
     "mindatUrl": "https://www.mindat.org/min-3753.html",
     "wikiTitle": "Staurolite",
-    "nerdFact": "Staurolite's cross twins occur at either 60° (the Greek cross) or 90° (the St. Andrew's cross), and the two forms are not interchangeable — they reflect twinning on different planes and are related to the slight monoclinic distortion of the otherwise pseudo-orthorhombic structure."
+    "nerdFact": "Staurolite's cross twins occur at either 60° (the Greek cross) or 90° (the St. Andrew's cross), and the two forms are not interchangeable — they reflect twinning on different planes and are related to the slight monoclinic distortion of the otherwise pseudo-orthorhombic structure.",
+    "etymology": "From Greek 'stauros' (cross) + 'lithos' (stone), referring to its characteristic cruciform penetration twins",
+    "associations": [
+      "Garnet",
+      "Kyanite",
+      "Biotite",
+      "Muscovite",
+      "Quartz"
+    ],
+    "habit": "Short prismatic crystals; penetration twins forming 60° (Greek cross) or 90° (St Andrew's cross) — highly distinctive"
   },
   {
     "name": "Zircon",
@@ -507,7 +804,16 @@
     "funFact": "The oldest known material on Earth, with some crystals aged over 4 billion years.",
     "mindatUrl": "https://www.mindat.org/min-4403.html",
     "wikiTitle": "Zircon",
-    "nerdFact": "Zircon is the mineral that revealed the Hadean Eon. Jack Hills zircons from Australia, dated to 4.404 billion years ago via U-Pb geochronology, contain oxygen isotope ratios indicating liquid water was present on Earth's surface only ~150 million years after the planet formed — far earlier than anyone expected."
+    "nerdFact": "Zircon is the mineral that revealed the Hadean Eon. Jack Hills zircons from Australia, dated to 4.404 billion years ago via U-Pb geochronology, contain oxygen isotope ratios indicating liquid water was present on Earth's surface only ~150 million years after the planet formed — far earlier than anyone expected.",
+    "etymology": "From Arabic 'zarkun' or Persian 'zargun' (gold-coloured); some derive it from Arabic 'zar' (gold) + 'gun' (colour)",
+    "associations": [
+      "Titanite",
+      "Apatite",
+      "Magnetite",
+      "Ilmenite",
+      "Biotite"
+    ],
+    "habit": "Short tetragonal prisms with pyramidal terminations; typically as small stubby grains; metamict (amorphous) varieties common"
   },
   {
     "name": "Titanite",
@@ -522,7 +828,16 @@
     "funFact": "Also called Sphene, it has a higher dispersion (fire) than diamond.",
     "mindatUrl": "https://www.mindat.org/min-3977.html",
     "wikiTitle": "Titanite",
-    "nerdFact": "Titanite can incorporate uranium into its structure, making it useful for U-Pb geochronology. But its high closure temperature (~660°C) means it records the age of metamorphic crystallization rather than cooling, allowing geologists to distinguish between the age of a rock's formation and subsequent thermal overprinting."
+    "nerdFact": "Titanite can incorporate uranium into its structure, making it useful for U-Pb geochronology. But its high closure temperature (~660°C) means it records the age of metamorphic crystallization rather than cooling, allowing geologists to distinguish between the age of a rock's formation and subsequent thermal overprinting.",
+    "etymology": "Named for its titanium content; also called sphene from Greek 'sphen' (wedge), referring to its wedge-shaped crystals",
+    "associations": [
+      "Zircon",
+      "Apatite",
+      "Hornblende",
+      "Magnetite",
+      "Epidote"
+    ],
+    "habit": "Characteristic wedge-shaped or envelope-shaped monoclinic crystals; also massive, lamellar, or as accessory grains"
   },
   {
     "name": "Garnet",
@@ -537,7 +852,16 @@
     "funFact": "A diverse group of minerals used both as gemstones and industrial abrasives.",
     "mindatUrl": "https://www.mindat.org/min-10272.html",
     "wikiTitle": "Garnet",
-    "nerdFact": "Majorite garnet — a high-pressure polymorph stable only below 660 km depth in the mantle — has been found as inclusions in diamonds. These inclusions are the only direct samples of material from the transition zone and lower mantle that humans have ever held in their hands."
+    "nerdFact": "Majorite garnet — a high-pressure polymorph stable only below 660 km depth in the mantle — has been found as inclusions in diamonds. These inclusions are the only direct samples of material from the transition zone and lower mantle that humans have ever held in their hands.",
+    "etymology": "From Latin 'granatum' (pomegranate seed), referring to the resemblance of red garnet crystals to pomegranate seeds",
+    "associations": [
+      "Mica",
+      "Quartz",
+      "Kyanite",
+      "Staurolite",
+      "Hornblende"
+    ],
+    "habit": "Typically as well-formed dodecahedra or trapezohedra; no cleavage; commonly porphyroblastic in metamorphic rocks"
   },
   {
     "name": "Calcite",
@@ -552,7 +876,16 @@
     "funFact": "Famous for its extreme double refraction and reaction to weak acid.",
     "mindatUrl": "https://www.mindat.org/min-859.html",
     "wikiTitle": "Calcite",
-    "nerdFact": "Calcite's extreme birefringence (Δn = 0.172) means a ray of light entering a calcite crystal splits into two rays that travel at different speeds and exit as two completely separate images. Erasmus Bartholinus discovered this double refraction in 1669 and it remained unexplained for over 150 years until Huygens developed wave optics."
+    "nerdFact": "Calcite's extreme birefringence (Δn = 0.172) means a ray of light entering a calcite crystal splits into two rays that travel at different speeds and exit as two completely separate images. Erasmus Bartholinus discovered this double refraction in 1669 and it remained unexplained for over 150 years until Huygens developed wave optics.",
+    "etymology": "From Latin 'calx' (lime), the material produced by burning limestone; Greek 'chalix' meant pebble or limestone",
+    "associations": [
+      "Dolomite",
+      "Quartz",
+      "Aragonite",
+      "Fluorite",
+      "Pyrite"
+    ],
+    "habit": "Over 300 described crystal forms — rhombohedra, scalenohedra (dogtooth), prisms, plates; also stalactitic, oolitic, massive"
   },
   {
     "name": "Aragonite",
@@ -567,7 +900,16 @@
     "funFact": "The primary mineral found in the shells of many marine organisms.",
     "mindatUrl": "https://www.mindat.org/min-307.html",
     "wikiTitle": "Aragonite",
-    "nerdFact": "Aragonite is metastable at surface conditions and slowly inverts to calcite over geological time — which is why fossil shells older than ~100 million years are almost always calcite, even if the original organism secreted aragonite. The inversion rate depends on temperature and the presence of magnesium."
+    "nerdFact": "Aragonite is metastable at surface conditions and slowly inverts to calcite over geological time — which is why fossil shells older than ~100 million years are almost always calcite, even if the original organism secreted aragonite. The inversion rate depends on temperature and the presence of magnesium.",
+    "etymology": "Named in 1797 after Aragon, Spain, where well-formed crystals were discovered in iron mines at Molina de Aragón",
+    "associations": [
+      "Calcite",
+      "Gypsum",
+      "Strontianite",
+      "Celestite",
+      "Sulfur"
+    ],
+    "habit": "Prismatic crystals, often pseudo-hexagonal cyclic twins; also acicular, columnar, stalactitic, and as coral/shell material"
   },
   {
     "name": "Magnesite",
@@ -582,7 +924,16 @@
     "funFact": "A common source of magnesium; often forms white, porcelain-like masses.",
     "mindatUrl": "https://www.mindat.org/min-2482.html",
     "wikiTitle": "Magnesite",
-    "nerdFact": "Magnesite almost never forms directly from seawater — unlike calcite and aragonite. Instead, it typically forms by replacement of pre-existing dolomite or as a hydrothermal precipitate. Magnesite crystallization from aqueous solution at low temperatures is kinetically inhibited because Mg²⁺ ions hold onto their hydration shell too strongly."
+    "nerdFact": "Magnesite almost never forms directly from seawater — unlike calcite and aragonite. Instead, it typically forms by replacement of pre-existing dolomite or as a hydrothermal precipitate. Magnesite crystallization from aqueous solution at low temperatures is kinetically inhibited because Mg²⁺ ions hold onto their hydration shell too strongly.",
+    "etymology": "Named after Magnesia, a region of Thessaly, Greece, also the source of names for magnesium, magnetite, and manganese",
+    "associations": [
+      "Dolomite",
+      "Serpentine",
+      "Talc",
+      "Calcite",
+      "Chromite"
+    ],
+    "habit": "Rarely as rhombohedral crystals; typically as white porcelain-like or chalky masses; also granular or lamellar"
   },
   {
     "name": "Dolomite",
@@ -597,7 +948,16 @@
     "funFact": "Named after the French geologist Déodat de Dolomieu.",
     "mindatUrl": "https://www.mindat.org/min-1304.html",
     "wikiTitle": "Dolomite",
-    "nerdFact": "Despite being one of the most common sedimentary minerals, nobody has convincingly synthesized dolomite under surface conditions in the laboratory — a problem known as the 'dolomite problem.' Modern dolomite formation requires microbial mediation, and it appears that sulfate-reducing bacteria strip Mg²⁺ of its hydration shell, enabling crystallization."
+    "nerdFact": "Despite being one of the most common sedimentary minerals, nobody has convincingly synthesized dolomite under surface conditions in the laboratory — a problem known as the 'dolomite problem.' Modern dolomite formation requires microbial mediation, and it appears that sulfate-reducing bacteria strip Mg²⁺ of its hydration shell, enabling crystallization.",
+    "etymology": "Named in 1792 after French geologist and mineralogist Déodat Gratet de Dolomieu, who first described the Dolomite Mountains rock",
+    "associations": [
+      "Calcite",
+      "Magnesite",
+      "Pyrite",
+      "Fluorite",
+      "Barite"
+    ],
+    "habit": "Curved saddle-shaped (baroque) rhombohedral crystals characteristic; also massive, granular, or as replacement of limestone"
   },
   {
     "name": "Rhodochrosite",
@@ -612,7 +972,16 @@
     "funFact": "Known for its beautiful pink to red color; the state mineral of Colorado.",
     "mindatUrl": "https://www.mindat.org/min-3406.html",
     "wikiTitle": "Rhodochrosite",
-    "nerdFact": "The Incas called rhodochrosite 'Inca Rose' and believed the stalactitic banded masses at the Capillitas mine in Argentina grew from the petrified blood of their dead rulers. The largest known rhodochrosite crystal — a 4.3 kg gem-quality rhombohedron from Colorado — sold for over $600,000."
+    "nerdFact": "The Incas called rhodochrosite 'Inca Rose' and believed the stalactitic banded masses at the Capillitas mine in Argentina grew from the petrified blood of their dead rulers. The largest known rhodochrosite crystal — a 4.3 kg gem-quality rhombohedron from Colorado — sold for over $600,000.",
+    "etymology": "From Greek 'rhodon' (rose) + 'chrosis' (colouring), referring to its distinctive rose-pink to red colour",
+    "associations": [
+      "Sphalerite",
+      "Galena",
+      "Pyrite",
+      "Calcite",
+      "Fluorite"
+    ],
+    "habit": "Curved rhombohedral crystals; also botryoidal, stalactitic banded masses (Colorado); granular or cleavable masses"
   },
   {
     "name": "Siderite",
@@ -627,7 +996,16 @@
     "funFact": "An important iron ore, often found in coal-bearing sedimentary rocks.",
     "mindatUrl": "https://www.mindat.org/min-3647.html",
     "wikiTitle": "Siderite",
-    "nerdFact": "Siderite in Precambrian banded iron formations (BIFs) records the composition of ancient seawater before the Great Oxidation Event. The iron in siderite could only have been transported as soluble Fe²⁺ in an anoxic ocean — its presence in 2.5 billion-year-old rocks is direct chemical evidence that the early ocean had essentially no dissolved oxygen."
+    "nerdFact": "Siderite in Precambrian banded iron formations (BIFs) records the composition of ancient seawater before the Great Oxidation Event. The iron in siderite could only have been transported as soluble Fe²⁺ in an anoxic ocean — its presence in 2.5 billion-year-old rocks is direct chemical evidence that the early ocean had essentially no dissolved oxygen.",
+    "etymology": "From Greek 'sideros' (iron), referring to its iron content — the same root as siderophile (iron-loving)",
+    "associations": [
+      "Calcite",
+      "Pyrite",
+      "Chlorite",
+      "Quartz",
+      "Ankerite"
+    ],
+    "habit": "Curved rhombohedral crystals, often with curved faces; botryoidal, massive, or as sedimentary nodules (clay ironstone)"
   },
   {
     "name": "Malachite",
@@ -642,7 +1020,16 @@
     "funFact": "A striking green copper mineral often found in botryoidal (grape-like) masses.",
     "mindatUrl": "https://www.mindat.org/min-2550.html",
     "wikiTitle": "Malachite",
-    "nerdFact": "Malachite's vivid green was used as a pigment in ancient Egypt as far back as 3000 BCE, and the Malachite Room in the Winter Palace in St. Petersburg contains over 20,000 kg of the mineral in decorative panels, columns, and vases — all quarried from a single deposit in the Ural Mountains that is now exhausted."
+    "nerdFact": "Malachite's vivid green was used as a pigment in ancient Egypt as far back as 3000 BCE, and the Malachite Room in the Winter Palace in St. Petersburg contains over 20,000 kg of the mineral in decorative panels, columns, and vases — all quarried from a single deposit in the Ural Mountains that is now exhausted.",
+    "etymology": "From Greek 'malache' or 'maloche' (mallow plant), referring to its green colour resembling mallow leaves",
+    "associations": [
+      "Azurite",
+      "Chalcopyrite",
+      "Chrysocolla",
+      "Cuprite",
+      "Calcite"
+    ],
+    "habit": "Rarely as prismatic crystals; typically botryoidal or stalactitic with concentric banding; also fibrous, earthy, or massive"
   },
   {
     "name": "Azurite",
@@ -657,7 +1044,16 @@
     "funFact": "Named for its deep 'azure' blue color; often found alongside green malachite.",
     "mindatUrl": "https://www.mindat.org/min-447.html",
     "wikiTitle": "Azurite",
-    "nerdFact": "Azurite is thermodynamically unstable in the presence of water — it spontaneously converts to malachite over time by the reaction 2Cu₃(CO₃)₂(OH)₂ + H₂O → 3Cu₂(CO₃)(OH)₂ + CO₂. This is why medieval paintings that used azurite as a blue pigment have often turned irreversibly green over the centuries."
+    "nerdFact": "Azurite is thermodynamically unstable in the presence of water — it spontaneously converts to malachite over time by the reaction 2Cu₃(CO₃)₂(OH)₂ + H₂O → 3Cu₂(CO₃)(OH)₂ + CO₂. This is why medieval paintings that used azurite as a blue pigment have often turned irreversibly green over the centuries.",
+    "etymology": "From Persian 'lazhward' (blue colour, lapis lazuli), via Arabic and Old French 'azur' (sky blue)",
+    "associations": [
+      "Malachite",
+      "Cuprite",
+      "Chalcopyrite",
+      "Chrysocolla",
+      "Calcite"
+    ],
+    "habit": "Short prismatic to tabular crystals, often intergrown with malachite; also radiating, stalactitic, earthy, or massive"
   },
   {
     "name": "Barite",
@@ -672,7 +1068,16 @@
     "funFact": "Unusually heavy for a non-metallic mineral due to its barium content.",
     "mindatUrl": "https://www.mindat.org/min-549.html",
     "wikiTitle": "Barite",
-    "nerdFact": "Barite's extreme density (SG 4.5) for a non-metallic mineral makes it the primary material used to weight drilling mud in oil and gas wells. Approximately 90% of world barite production goes into the petroleum industry — it is mixed with water and pumped down drill holes to counteract the pressure of subterranean oil and gas reservoirs."
+    "nerdFact": "Barite's extreme density (SG 4.5) for a non-metallic mineral makes it the primary material used to weight drilling mud in oil and gas wells. Approximately 90% of world barite production goes into the petroleum industry — it is mixed with water and pumped down drill holes to counteract the pressure of subterranean oil and gas reservoirs.",
+    "etymology": "From Greek 'barys' (heavy), referring to its unusually high density for a non-metallic mineral; also spelled baryte",
+    "associations": [
+      "Fluorite",
+      "Calcite",
+      "Galena",
+      "Sphalerite",
+      "Quartz"
+    ],
+    "habit": "Tabular to prismatic crystals, often in cockscomb or crested aggregates; 'desert rose' habit in sandy environments; also massive"
   },
   {
     "name": "Celestite",
@@ -687,7 +1092,16 @@
     "funFact": "Often forms beautiful sky-blue geode linings; a major source of strontium.",
     "mindatUrl": "https://www.mindat.org/min-927.html",
     "wikiTitle": "Celestine_(mineral)",
-    "nerdFact": "Nearly all strontium-90 fallout from nuclear weapons testing in the 1950s was incorporated into human bone because the body cannot distinguish Sr from Ca during apatite crystallization. Geologists track this contamination using celestite as a reference because SrSO₄ is insoluble and retains the original strontium isotopic signature."
+    "nerdFact": "Nearly all strontium-90 fallout from nuclear weapons testing in the 1950s was incorporated into human bone because the body cannot distinguish Sr from Ca during apatite crystallization. Geologists track this contamination using celestite as a reference because SrSO₄ is insoluble and retains the original strontium isotopic signature.",
+    "etymology": "From Latin 'caelestis' (celestial, heavenly), referring to the pale sky-blue colour of the original specimens described",
+    "associations": [
+      "Gypsum",
+      "Halite",
+      "Aragonite",
+      "Sulfur",
+      "Calcite"
+    ],
+    "habit": "Tabular to prismatic crystals; beautifully crystallised geode linings; also fibrous, granular, or massive"
   },
   {
     "name": "Anhydrite",
@@ -702,7 +1116,16 @@
     "funFact": "The anhydrous form of calcium sulfate, meaning 'without water'.",
     "mindatUrl": "https://www.mindat.org/min-234.html",
     "wikiTitle": "Anhydrite",
-    "nerdFact": "When anhydrite absorbs water and converts to gypsum it expands in volume by about 60%. In underground mines this expansion can generate pressures sufficient to crack concrete foundations, buckle tunnel linings, and heave floors upward by meters — a geological hazard known as 'anhydrite swelling.'"
+    "nerdFact": "When anhydrite absorbs water and converts to gypsum it expands in volume by about 60%. In underground mines this expansion can generate pressures sufficient to crack concrete foundations, buckle tunnel linings, and heave floors upward by meters — a geological hazard known as 'anhydrite swelling.'",
+    "etymology": "From Greek 'an' (without) + 'hydor' (water), distinguishing it from gypsum which contains water of crystallisation",
+    "associations": [
+      "Gypsum",
+      "Halite",
+      "Calcite",
+      "Celestite",
+      "Dolomite"
+    ],
+    "habit": "Rarely as crystals; typically massive, granular, or fibrous; often in evaporite sequences interbedded with halite and gypsum"
   },
   {
     "name": "Gypsum",
@@ -717,7 +1140,16 @@
     "funFact": "The defining mineral for hardness 2 on the Mohs scale.",
     "mindatUrl": "https://www.mindat.org/min-1784.html",
     "wikiTitle": "Gypsum",
-    "nerdFact": "The Naica Cave of Crystals in Chihuahua, Mexico contains gypsum selenite crystals up to 12 meters long and 55 tonnes in mass — among the largest natural crystals ever found. They grew over ~500,000 years in water maintained at exactly 58°C by the intersection of hydrothermal fluids with groundwater."
+    "nerdFact": "The Naica Cave of Crystals in Chihuahua, Mexico contains gypsum selenite crystals up to 12 meters long and 55 tonnes in mass — among the largest natural crystals ever found. They grew over ~500,000 years in water maintained at exactly 58°C by the intersection of hydrothermal fluids with groundwater.",
+    "etymology": "From Greek 'gypsos' (chalk, plaster), via Latin 'gypsum'; the same root gives us the word 'chalk' in some European languages",
+    "associations": [
+      "Anhydrite",
+      "Halite",
+      "Calcite",
+      "Aragonite",
+      "Sulfur"
+    ],
+    "habit": "Tabular monoclinic crystals; swallowtail twins very common; selenite (transparent plates), satin spar (fibrous), alabaster (massive)"
   },
   {
     "name": "Scheelite",
@@ -732,7 +1164,16 @@
     "funFact": "Famous for its bright blue-white fluorescence under shortwave UV light.",
     "mindatUrl": "https://www.mindat.org/min-3576.html",
     "wikiTitle": "Scheelite",
-    "nerdFact": "Scheelite was used in World War II as a critical strategic resource — tungsten derived from it was essential for hardening steel in armor-piercing shells and cutting tools. Sweden, as a neutral nation, sold scheelite to both Allied and Axis powers, and controlling this supply was a significant strategic concern."
+    "nerdFact": "Scheelite was used in World War II as a critical strategic resource — tungsten derived from it was essential for hardening steel in armor-piercing shells and cutting tools. Sweden, as a neutral nation, sold scheelite to both Allied and Axis powers, and controlling this supply was a significant strategic concern.",
+    "etymology": "Named in 1821 after Swedish chemist Carl Wilhelm Scheele, who first demonstrated tungsten's existence as an element in 1781",
+    "associations": [
+      "Wolframite",
+      "Cassiterite",
+      "Topaz",
+      "Fluorite",
+      "Molybdenite"
+    ],
+    "habit": "Pseudo-octahedral dipyramidal crystals; also massive or granular; bright blue-white fluorescence under SW-UV is diagnostic"
   },
   {
     "name": "Apatite",
@@ -747,7 +1188,16 @@
     "funFact": "The defining mineral for hardness 5 on the Mohs scale.",
     "mindatUrl": "https://www.mindat.org/min-29229.html",
     "wikiTitle": "Apatite",
-    "nerdFact": "Fission-track dating uses apatite to reconstruct the thermal history of rocks. Uranium-238 in apatite undergoes spontaneous fission, leaving linear damage tracks in the crystal lattice. The tracks anneal above ~120°C, so counting their density and measuring their lengths directly constrains when and how fast a rock cooled through this temperature window."
+    "nerdFact": "Fission-track dating uses apatite to reconstruct the thermal history of rocks. Uranium-238 in apatite undergoes spontaneous fission, leaving linear damage tracks in the crystal lattice. The tracks anneal above ~120°C, so counting their density and measuring their lengths directly constrains when and how fast a rock cooled through this temperature window.",
+    "etymology": "From Greek 'apatao' (to deceive), because it was frequently mistaken for other minerals including beryl, olivine, and tourmaline",
+    "associations": [
+      "Calcite",
+      "Magnetite",
+      "Zircon",
+      "Titanite",
+      "Ilmenite"
+    ],
+    "habit": "Short to long hexagonal prisms; tabular or acicular; also massive, granular, botryoidal, or as oolitic concretions"
   },
   {
     "name": "Halite",
@@ -762,7 +1212,16 @@
     "funFact": "Common rock salt, edible and essential for life.",
     "mindatUrl": "https://www.mindat.org/min-1804.html",
     "wikiTitle": "Halite",
-    "nerdFact": "Halite deforms plastically at geological strain rates even at room temperature — a property called ductile flow. Underground salt domes rise buoyantly through denser surrounding rock over millions of years like slow-motion lava lamps, and the resulting structures trap enormous petroleum reservoirs."
+    "nerdFact": "Halite deforms plastically at geological strain rates even at room temperature — a property called ductile flow. Underground salt domes rise buoyantly through denser surrounding rock over millions of years like slow-motion lava lamps, and the resulting structures trap enormous petroleum reservoirs.",
+    "etymology": "From Greek 'hals' (salt, sea), the same root as halogen (salt-producing) and the word 'salt' itself via Latin 'sal'",
+    "associations": [
+      "Anhydrite",
+      "Gypsum",
+      "Sylvite",
+      "Carnallite",
+      "Dolomite"
+    ],
+    "habit": "Perfect cubic crystals; hopper crystals (skeletal, sunken faces) characteristic of evaporating brines; also massive granular"
   },
   {
     "name": "Sylvite",
@@ -777,7 +1236,16 @@
     "funFact": "A primary source of potassium for fertilizers, with a distinct bitter taste.",
     "mindatUrl": "https://www.mindat.org/min-3850.html",
     "wikiTitle": "Sylvite",
-    "nerdFact": "Sylvite tastes sharply bitter — in contrast to halite's clean saltiness — because K⁺ ions are large enough to activate both salt and bitter taste receptors simultaneously. The brain interprets this dual signal as bitterness. Salt substitutes use this property deliberately, mixing KCl with NaCl to reduce sodium intake."
+    "nerdFact": "Sylvite tastes sharply bitter — in contrast to halite's clean saltiness — because K⁺ ions are large enough to activate both salt and bitter taste receptors simultaneously. The brain interprets this dual signal as bitterness. Salt substitutes use this property deliberately, mixing KCl with NaCl to reduce sodium intake.",
+    "etymology": "Named after Sylvius de la Boe (Franz de la Boë), a 17th-century Dutch physician; the mineral was once called 'sal digestivus Sylvii'",
+    "associations": [
+      "Halite",
+      "Carnallite",
+      "Anhydrite",
+      "Kieserite",
+      "Polyhalite"
+    ],
+    "habit": "Cubic crystals, often with octahedral modifications; massive granular; commonly intergrown with halite in potash evaporites"
   },
   {
     "name": "Fluorite",
@@ -792,7 +1260,16 @@
     "funFact": "The defining mineral for hardness 4; the term 'fluorescence' is named after it.",
     "mindatUrl": "https://www.mindat.org/min-1576.html",
     "wikiTitle": "Fluorite",
-    "nerdFact": "Fluorite gave its name to both fluorescence (many specimens glow brilliantly under UV) and the element fluorine — but the connection is not accidental. The fluorescence arises from trace rare-earth impurities, not fluorine itself. The element fluorine was so named because it was first obtained by electrolysis of fluorite-derived hydrofluoric acid."
+    "nerdFact": "Fluorite gave its name to both fluorescence (many specimens glow brilliantly under UV) and the element fluorine — but the connection is not accidental. The fluorescence arises from trace rare-earth impurities, not fluorine itself. The element fluorine was so named because it was first obtained by electrolysis of fluorite-derived hydrofluoric acid.",
+    "etymology": "From Latin 'fluere' (to flow), because it was used as a flux in metal smelting to lower the melting point of ores",
+    "associations": [
+      "Barite",
+      "Calcite",
+      "Quartz",
+      "Galena",
+      "Sphalerite"
+    ],
+    "habit": "Perfect cubic crystals; penetration twins on {111}; interpenetrant cubes and octahedra; also massive, granular, or banded (Blue John)"
   },
   {
     "name": "Corundum",
@@ -807,7 +1284,16 @@
     "funFact": "The second hardest natural mineral; its varieties are Ruby and Sapphire.",
     "mindatUrl": "https://www.mindat.org/min-1136.html",
     "wikiTitle": "Corundum",
-    "nerdFact": "Ruby and sapphire are chemically identical — both are corundum colored by trace impurities. Ruby gets its red from Cr³⁺ replacing Al³⁺; sapphire's blue comes from intervalence charge transfer between Fe²⁺ and Ti⁴⁺ on adjacent sites. The same element in a different oxidation state or different pair gives yellow, pink, orange, green, and colorless sapphires."
+    "nerdFact": "Ruby and sapphire are chemically identical — both are corundum colored by trace impurities. Ruby gets its red from Cr³⁺ replacing Al³⁺; sapphire's blue comes from intervalence charge transfer between Fe²⁺ and Ti⁴⁺ on adjacent sites. The same element in a different oxidation state or different pair gives yellow, pink, orange, green, and colorless sapphires.",
+    "etymology": "From Tamil 'kurundam' or Sanskrit 'kuruvinda', referring to ruby; transmitted via Arabic and Portuguese to European languages",
+    "associations": [
+      "Magnetite",
+      "Chlorite",
+      "Margarite",
+      "Diaspore",
+      "Spinel"
+    ],
+    "habit": "Barrel-shaped or tabular hexagonal prisms; often with striated faces; also as rounded grains in alluvial deposits"
   },
   {
     "name": "Hematite",
@@ -822,7 +1308,16 @@
     "funFact": "The most important iron ore; leaves a distinctive reddish-brown streak.",
     "mindatUrl": "https://www.mindat.org/min-1856.html",
     "wikiTitle": "Hematite",
-    "nerdFact": "Specular hematite — the mirror-shiny silvery variety — has been used as a reflective surface since at least 5000 BCE in Mesopotamia. The oldest known mirrors are polished hematite discs. Despite being opaque and metallic-looking, hematite in thin section is blood red and transmits light — its optical properties change completely with thickness."
+    "nerdFact": "Specular hematite — the mirror-shiny silvery variety — has been used as a reflective surface since at least 5000 BCE in Mesopotamia. The oldest known mirrors are polished hematite discs. Despite being opaque and metallic-looking, hematite in thin section is blood red and transmits light — its optical properties change completely with thickness.",
+    "etymology": "From Greek 'haima' (blood) + 'lithos' (stone), referring to its blood-red streak and the red powder produced when ground",
+    "associations": [
+      "Magnetite",
+      "Goethite",
+      "Quartz",
+      "Calcite",
+      "Pyrite"
+    ],
+    "habit": "Tabular rhombohedral crystals (specular); botryoidal (kidney ore); oolitic; rosette aggregates (iron roses); earthy (ochre)"
   },
   {
     "name": "Ilmenite",
@@ -837,7 +1332,16 @@
     "funFact": "The main ore of titanium, often found as heavy sand on beaches.",
     "mindatUrl": "https://www.mindat.org/min-2013.html",
     "wikiTitle": "Ilmenite",
-    "nerdFact": "Ilmenite is the primary feedstock for producing titanium dioxide, the world's most widely used white pigment. TiO₂ is in virtually every white paint, white plastic, sunscreen, and paper on Earth. Annual TiO₂ production exceeds 8 million tonnes, almost all of it ultimately from ilmenite beach sands."
+    "nerdFact": "Ilmenite is the primary feedstock for producing titanium dioxide, the world's most widely used white pigment. TiO₂ is in virtually every white paint, white plastic, sunscreen, and paper on Earth. Annual TiO₂ production exceeds 8 million tonnes, almost all of it ultimately from ilmenite beach sands.",
+    "etymology": "Named in 1827 after the Ilmen Mountains in the southern Urals, Russia, where it was first described",
+    "associations": [
+      "Magnetite",
+      "Hematite",
+      "Rutile",
+      "Apatite",
+      "Plagioclase"
+    ],
+    "habit": "Thick tabular rhombohedral crystals; also massive, compact, or as disseminated grains; common in beach placers"
   },
   {
     "name": "Spinel",
@@ -852,7 +1356,16 @@
     "funFact": "Often mistaken for ruby; the 'Black Prince's Ruby' in the UK crown jewels is spinel.",
     "mindatUrl": "https://www.mindat.org/min-3729.html",
     "wikiTitle": "Spinel",
-    "nerdFact": "The 'Black Prince's Ruby' — a 170-carat red stone mounted in the Imperial State Crown of the United Kingdom — is a spinel. So is the Timur Ruby, also in the Crown Jewels. For centuries, rubies and spinels were indistinguishable without spectroscopy; they were collectively called 'balas rubies.'"
+    "nerdFact": "The 'Black Prince's Ruby' — a 170-carat red stone mounted in the Imperial State Crown of the United Kingdom — is a spinel. So is the Timur Ruby, also in the Crown Jewels. For centuries, rubies and spinels were indistinguishable without spectroscopy; they were collectively called 'balas rubies.'",
+    "etymology": "From Latin 'spinella' (little thorn), referring to the sharp octahedral crystal points; or possibly from Greek 'spinos' (spark)",
+    "associations": [
+      "Corundum",
+      "Garnet",
+      "Magnetite",
+      "Dolomite",
+      "Chondrodite"
+    ],
+    "habit": "Octahedral crystals, often with spinel-law twins (flat triangular spinel twins); also granular, rounded, or as water-worn pebbles"
   },
   {
     "name": "Chromite",
@@ -867,7 +1380,16 @@
     "funFact": "The only economic ore of chromium, used to make stainless steel.",
     "mindatUrl": "https://www.mindat.org/min-1036.html",
     "wikiTitle": "Chromite",
-    "nerdFact": "Chromite in ophiolites — slivers of ancient ocean floor thrust onto continents — contains platinum-group minerals visible only by electron microscopy, yet these tiny concentrations represent the world's primary platinum supply. About 75% of known platinum reserves occur in layered chromitite seams in South Africa's Bushveld Complex."
+    "nerdFact": "Chromite in ophiolites — slivers of ancient ocean floor thrust onto continents — contains platinum-group minerals visible only by electron microscopy, yet these tiny concentrations represent the world's primary platinum supply. About 75% of known platinum reserves occur in layered chromitite seams in South Africa's Bushveld Complex.",
+    "etymology": "Named for its chromium content; chromium itself named from Greek 'chroma' (colour) for the vivid colours of its compounds",
+    "associations": [
+      "Olivine",
+      "Serpentine",
+      "Magnetite",
+      "Pyroxene",
+      "Platinum-group minerals"
+    ],
+    "habit": "Octahedral crystals; typically as disseminated grains, massive, or as stratiform layers (chromitite) in ultramafic rocks"
   },
   {
     "name": "Rutile",
@@ -882,7 +1404,16 @@
     "funFact": "Commonly forms golden needle-like inclusions in quartz known as 'Venus hair'.",
     "mindatUrl": "https://www.mindat.org/min-3486.html",
     "wikiTitle": "Rutile",
-    "nerdFact": "Rutile has one of the highest refractive indices of any natural transparent mineral (nω = 2.616, nε = 2.903), giving gem-quality rutile a dispersion — or 'fire' — approximately six times greater than diamond. Despite this, it is rarely faceted as a gem because its softness (6 Mohs) makes it prone to scratching."
+    "nerdFact": "Rutile has one of the highest refractive indices of any natural transparent mineral (nω = 2.616, nε = 2.903), giving gem-quality rutile a dispersion — or 'fire' — approximately six times greater than diamond. Despite this, it is rarely faceted as a gem because its softness (6 Mohs) makes it prone to scratching.",
+    "etymology": "From Latin 'rutilus' (red, glowing), referring to its deep red to reddish-brown colour in transmitted light",
+    "associations": [
+      "Ilmenite",
+      "Hematite",
+      "Zircon",
+      "Quartz",
+      "Titanite"
+    ],
+    "habit": "Prismatic tetragonal crystals, often striated; characteristic knee-shaped (geniculate) twins; golden needles as inclusions in quartz"
   },
   {
     "name": "Magnetite",
@@ -897,7 +1428,16 @@
     "funFact": "The most magnetic mineral; naturally magnetized pieces are called lodestones.",
     "mindatUrl": "https://www.mindat.org/min-2538.html",
     "wikiTitle": "Magnetite",
-    "nerdFact": "Magnetite crystals precipitated by magnetotactic bacteria are so perfectly stoichiometric and defect-free that they cannot form inorganically under the same conditions — they are used as a biosignature for life. The famous ALH84001 Mars meteorite contains magnetite crystals argued (controversially) to be of biological origin."
+    "nerdFact": "Magnetite crystals precipitated by magnetotactic bacteria are so perfectly stoichiometric and defect-free that they cannot form inorganically under the same conditions — they are used as a biosignature for life. The famous ALH84001 Mars meteorite contains magnetite crystals argued (controversially) to be of biological origin.",
+    "etymology": "From Magnesia, Greece — the same region that gives magnesium, magnet, and manganese their names; lodestones from Magnesia were known to antiquity",
+    "associations": [
+      "Hematite",
+      "Ilmenite",
+      "Pyrite",
+      "Chalcopyrite",
+      "Apatite"
+    ],
+    "habit": "Octahedral crystals; also dodecahedral; massive granular; as disseminated grains; sand-sized grains in beach placers"
   },
   {
     "name": "Cassiterite",
@@ -912,7 +1452,16 @@
     "funFact": "The primary ore of tin, remarkably heavy due to its high tin content.",
     "mindatUrl": "https://www.mindat.org/min-917.html",
     "wikiTitle": "Cassiterite",
-    "nerdFact": "Cassiterite with an SG of ~7 is so dense that it concentrates in alluvial placer deposits — ancient riverbeds and beaches — where it is mined by simple panning. The Bronze Age was largely powered by placer cassiterite that needed no smelting to separate from gangue, just hydraulic sorting by gravity."
+    "nerdFact": "Cassiterite with an SG of ~7 is so dense that it concentrates in alluvial placer deposits — ancient riverbeds and beaches — where it is mined by simple panning. The Bronze Age was largely powered by placer cassiterite that needed no smelting to separate from gangue, just hydraulic sorting by gravity.",
+    "etymology": "From Greek 'kassiteros' (tin), which may derive from Sanskrit 'kastira' — possibly connected to Cornwall (Cassiterides, the tin islands)",
+    "associations": [
+      "Wolframite",
+      "Tourmaline",
+      "Topaz",
+      "Arsenopyrite",
+      "Chalcopyrite"
+    ],
+    "habit": "Short prismatic tetragonal crystals; characteristic knee-shaped (geniculate) twins; also massive, botryoidal (wood tin), or as stream pebbles"
   },
   {
     "name": "Pyrolusite",
@@ -927,7 +1476,16 @@
     "funFact": "An important manganese ore; often forms dendritic (branching) patterns on rocks.",
     "mindatUrl": "https://www.mindat.org/min-3318.html",
     "wikiTitle": "Pyrolusite",
-    "nerdFact": "Pyrolusite dendrites on limestone bedding planes are the origin of countless alleged Jurassic 'fossils' sold in rock shops — they form when manganese-rich groundwater infiltrates along fractures and oxidizes, depositing branching MnO₂ crystals that are essentially indistinguishable to the naked eye from fossilized ferns."
+    "nerdFact": "Pyrolusite dendrites on limestone bedding planes are the origin of countless alleged Jurassic 'fossils' sold in rock shops — they form when manganese-rich groundwater infiltrates along fractures and oxidizes, depositing branching MnO₂ crystals that are essentially indistinguishable to the naked eye from fossilized ferns.",
+    "etymology": "From Greek 'pyr' (fire) + 'louein' (to wash), because it was used to remove the green tint from glass caused by iron impurities",
+    "associations": [
+      "Manganite",
+      "Romanechite",
+      "Goethite",
+      "Calcite",
+      "Barite"
+    ],
+    "habit": "Rarely as prismatic crystals (polianite); typically massive, earthy, botryoidal; characteristic dendritic coatings on rock surfaces"
   },
   {
     "name": "Goethite",
@@ -942,7 +1500,16 @@
     "funFact": "Named after Johann Wolfgang von Goethe, it's a major component of rust.",
     "mindatUrl": "https://www.mindat.org/min-1719.html",
     "wikiTitle": "Goethite",
-    "nerdFact": "Goethite is the mineral that gives the characteristic yellowish-brown color to laterite soils across tropical regions — covering roughly 25% of Earth's land surface. It is also responsible for the rusty color of Mars, where goethite dehydration at some point in the planet's history produced the hematite that gives Mars its red hue."
+    "nerdFact": "Goethite is the mineral that gives the characteristic yellowish-brown color to laterite soils across tropical regions — covering roughly 25% of Earth's land surface. It is also responsible for the rusty color of Mars, where goethite dehydration at some point in the planet's history produced the hematite that gives Mars its red hue.",
+    "etymology": "Named in 1806 after Johann Wolfgang von Goethe, the German poet and polymath, who was also an avid mineral collector",
+    "associations": [
+      "Hematite",
+      "Limonite",
+      "Lepidocrocite",
+      "Calcite",
+      "Quartz"
+    ],
+    "habit": "Prismatic to acicular crystals; botryoidal, stalactitic, or mammillary masses; also earthy (limonite) or as pseudomorphs after pyrite"
   },
   {
     "name": "Gold",
@@ -957,7 +1524,16 @@
     "funFact": "The most malleable metal; a single ounce can be beaten into a 300-square-foot sheet.",
     "mindatUrl": "https://www.mindat.org/min-1720.html",
     "wikiTitle": "Gold",
-    "nerdFact": "Gold's yellow color is a quantum mechanical effect — relativistic contraction of the 6s orbital lowers its energy and increases its overlap with the 5d orbitals, shifting the absorption edge into the blue. Without relativistic effects, gold would be silver-white like most metals."
+    "nerdFact": "Gold's yellow color is a quantum mechanical effect — relativistic contraction of the 6s orbital lowers its energy and increases its overlap with the 5d orbitals, shifting the absorption edge into the blue. Without relativistic effects, gold would be silver-white like most metals.",
+    "etymology": "Old English 'gold', from Proto-Germanic 'gulþą', related to 'yellow'; chemical symbol Au from Latin 'aurum' (gold, related to 'aurora' — dawn)",
+    "associations": [
+      "Pyrite",
+      "Arsenopyrite",
+      "Quartz",
+      "Tellurides",
+      "Silver"
+    ],
+    "habit": "Rarely as octahedral or cubic crystals; typically as wire, dendritic, spongy, or leaf-like forms; nuggets in alluvial placers"
   },
   {
     "name": "Silver",
@@ -972,7 +1548,16 @@
     "funFact": "Has the highest electrical and thermal conductivity of any metal.",
     "mindatUrl": "https://www.mindat.org/min-3664.html",
     "wikiTitle": "Silver",
-    "nerdFact": "Silver tarnishes because Ag reacts with atmospheric hydrogen sulfide (H₂S), not oxygen, to form black Ag₂S. The H₂S comes partly from combustion and partly from microbial activity in soil. This is why silver stored near rubber bands tarnishes faster — sulfur vulcanizing agents outgas slowly."
+    "nerdFact": "Silver tarnishes because Ag reacts with atmospheric hydrogen sulfide (H₂S), not oxygen, to form black Ag₂S. The H₂S comes partly from combustion and partly from microbial activity in soil. This is why silver stored near rubber bands tarnishes faster — sulfur vulcanizing agents outgas slowly.",
+    "etymology": "Old English 'seolfor', Proto-Germanic 'silubra'; chemical symbol Ag from Latin 'argentum', related to Greek 'argyros' (shiny, white)",
+    "associations": [
+      "Gold",
+      "Galena",
+      "Argentite",
+      "Calcite",
+      "Quartz"
+    ],
+    "habit": "Rarely as cubic or octahedral crystals; typically as wire, dendritic, or arborescent masses; twisted wire forms characteristic"
   },
   {
     "name": "Copper",
@@ -987,7 +1572,16 @@
     "funFact": "One of the few metals that occurs in nature in directly usable metallic form.",
     "mindatUrl": "https://www.mindat.org/min-1116.html",
     "wikiTitle": "Copper",
-    "nerdFact": "Copper is one of only two metals with a natural color other than silver-gray (gold being the other). The color comes from a specific electronic absorption transition just below the visible red — copper absorbs blue and green, reflecting only orange-red. This absorption is directly related to its exceptionally high electrical conductivity."
+    "nerdFact": "Copper is one of only two metals with a natural color other than silver-gray (gold being the other). The color comes from a specific electronic absorption transition just below the visible red — copper absorbs blue and green, reflecting only orange-red. This absorption is directly related to its exceptionally high electrical conductivity.",
+    "etymology": "From Latin 'cuprum', from Greek 'Kypros' (Cyprus), the main ancient source of copper; chemical symbol Cu also from 'cuprum'",
+    "associations": [
+      "Malachite",
+      "Azurite",
+      "Cuprite",
+      "Chalcocite",
+      "Calcite"
+    ],
+    "habit": "Rarely as cubic or dodecahedral crystals; typically as wire, dendritic, arborescent, or platy masses; often coated with malachite"
   },
   {
     "name": "Graphite",
@@ -1002,7 +1596,16 @@
     "funFact": "The soft polymorph of carbon, used as 'lead' in pencils.",
     "mindatUrl": "https://www.mindat.org/min-1740.html",
     "wikiTitle": "Graphite",
-    "nerdFact": "Graphite is simultaneously one of the softest minerals (Mohs 1-2) and one of the strongest materials along its basal plane — stronger than steel. Within each graphene layer, the C-C bonds are among the shortest and strongest in nature; it is only the van der Waals stacking between layers that is weak."
+    "nerdFact": "Graphite is simultaneously one of the softest minerals (Mohs 1-2) and one of the strongest materials along its basal plane — stronger than steel. Within each graphene layer, the C-C bonds are among the shortest and strongest in nature; it is only the van der Waals stacking between layers that is weak.",
+    "etymology": "From Greek 'graphein' (to write, to scratch), named in 1789 by Abraham Gottlob Werner because pencil 'leads' are made from it",
+    "associations": [
+      "Quartz",
+      "Feldspar",
+      "Calcite",
+      "Pyrite",
+      "Sillimanite"
+    ],
+    "habit": "Tabular to platy hexagonal crystals with perfect basal cleavage; typically foliated masses, flakes, or earthy (amorphous graphite)"
   },
   {
     "name": "Sulfur",
@@ -1017,7 +1620,16 @@
     "funFact": "Famed for its bright yellow color and the rotten-egg smell when burned.",
     "mindatUrl": "https://www.mindat.org/min-3826.html",
     "wikiTitle": "Sulfur",
-    "nerdFact": "Native sulfur deposits around volcanoes can form so rapidly that fresh flowers of sulfur crystallize overnight on fumarole vents. Sulfur has two common polymorphs — orthorhombic α-sulfur (stable below 96°C) and monoclinic β-sulfur — and fresh volcanic sulfur is always β; it inverts to the stable α form in your hand."
+    "nerdFact": "Native sulfur deposits around volcanoes can form so rapidly that fresh flowers of sulfur crystallize overnight on fumarole vents. Sulfur has two common polymorphs — orthorhombic α-sulfur (stable below 96°C) and monoclinic β-sulfur — and fresh volcanic sulfur is always β; it inverts to the stable α form in your hand.",
+    "etymology": "From Latin 'sulphur' or 'sulfur', possibly related to Sanskrit 'shulbari' (enemy of copper) or a pre-Latin Mediterranean root",
+    "associations": [
+      "Aragonite",
+      "Calcite",
+      "Gypsum",
+      "Celestite",
+      "Halite"
+    ],
+    "habit": "Dipyramidal orthorhombic crystals, often tabular; also stalactitic, massive, or as crusts and 'flowers of sulfur' on fumaroles"
   },
   {
     "name": "Molybdenite",
@@ -1032,7 +1644,16 @@
     "funFact": "Looks very similar to graphite but has a slightly bluish-gray streak.",
     "mindatUrl": "https://www.mindat.org/min-2746.html",
     "wikiTitle": "Molybdenite",
-    "nerdFact": "Molybdenite was the source of immense confusion before 1778 — it looked and behaved so much like graphite and galena that chemists lumped them together as 'molybdena.' Carl Wilhelm Scheele finally proved they were different by dissolving molybdenite in nitric acid and obtaining a new white oxide, ultimately leading to the isolation of the element molybdenum."
+    "nerdFact": "Molybdenite was the source of immense confusion before 1778 — it looked and behaved so much like graphite and galena that chemists lumped them together as 'molybdena.' Carl Wilhelm Scheele finally proved they were different by dissolving molybdenite in nitric acid and obtaining a new white oxide, ultimately leading to the isolation of the element molybdenum.",
+    "etymology": "From Greek 'molybdos' (lead), because it was confused with lead ore and graphite before molybdenum was identified as a distinct element in 1778",
+    "associations": [
+      "Chalcopyrite",
+      "Pyrite",
+      "Quartz",
+      "Fluorite",
+      "Wolframite"
+    ],
+    "habit": "Hexagonal plates or scales; foliated masses with perfect basal cleavage; flexible but not elastic sheets; greasy feel like graphite"
   },
   {
     "name": "Galena",
@@ -1047,7 +1668,16 @@
     "funFact": "The primary ore of lead, famous for its perfect cubic cleavage.",
     "mindatUrl": "https://www.mindat.org/min-1641.html",
     "wikiTitle": "Galena",
-    "nerdFact": "Galena's perfect cubic cleavage produces fragments with angles so precise that ancient peoples used galena crystals as mirrors. More significantly, a freshly cleaved galena surface acts as a semiconductor rectifier — the 'cat's whisker' galena crystal detectors in early 20th-century crystal radio sets were the first practical semiconductor devices."
+    "nerdFact": "Galena's perfect cubic cleavage produces fragments with angles so precise that ancient peoples used galena crystals as mirrors. More significantly, a freshly cleaved galena surface acts as a semiconductor rectifier — the 'cat's whisker' galena crystal detectors in early 20th-century crystal radio sets were the first practical semiconductor devices.",
+    "etymology": "From Latin 'galena' (lead ore, lead slag), used since antiquity; Pliny the Elder used the term in the 1st century CE",
+    "associations": [
+      "Sphalerite",
+      "Pyrite",
+      "Chalcopyrite",
+      "Calcite",
+      "Barite"
+    ],
+    "habit": "Perfect cubic crystals and cleavage fragments; cubo-octahedral forms; also massive granular; characteristic lead-grey colour and weight"
   },
   {
     "name": "Sphalerite",
@@ -1062,7 +1692,16 @@
     "funFact": "The main ore of zinc, with a dispersion three times higher than diamond.",
     "mindatUrl": "https://www.mindat.org/min-3727.html",
     "wikiTitle": "Sphalerite",
-    "nerdFact": "Sphalerite's color ranges from colorless to black depending entirely on iron content — pure ZnS is colorless (cleiophane), while iron-bearing varieties (marmatite) are black. The variation is linear: geologists use sphalerite color as a rough geothermometer because Fe solubility in ZnS increases with temperature."
+    "nerdFact": "Sphalerite's color ranges from colorless to black depending entirely on iron content — pure ZnS is colorless (cleiophane), while iron-bearing varieties (marmatite) are black. The variation is linear: geologists use sphalerite color as a rough geothermometer because Fe solubility in ZnS increases with temperature.",
+    "etymology": "From Greek 'sphaleros' (treacherous, deceptive), because it was often mistaken for galena but contained no recoverable lead",
+    "associations": [
+      "Galena",
+      "Pyrite",
+      "Chalcopyrite",
+      "Calcite",
+      "Barite"
+    ],
+    "habit": "Tetrahedral crystals; often as curved crystal faces; also massive, granular, botryoidal, or cleavable masses; colour varies widely with iron"
   },
   {
     "name": "Chalcocite",
@@ -1077,7 +1716,16 @@
     "funFact": "An important copper ore that is usually gray or black with a dull surface.",
     "mindatUrl": "https://www.mindat.org/min-962.html",
     "wikiTitle": "Chalcocite",
-    "nerdFact": "Chalcocite forms the richest copper ore deposits on Earth — supergene enrichment zones where descending oxidizing groundwater dissolves copper from primary sulfides and reprecipitates it as Cu₂S. The Chuquicamata deposit in Chile, the world's largest open-pit mine, owes much of its extraordinary grade to chalcocite supergene enrichment."
+    "nerdFact": "Chalcocite forms the richest copper ore deposits on Earth — supergene enrichment zones where descending oxidizing groundwater dissolves copper from primary sulfides and reprecipitates it as Cu₂S. The Chuquicamata deposit in Chile, the world's largest open-pit mine, owes much of its extraordinary grade to chalcocite supergene enrichment.",
+    "etymology": "From Greek 'chalkos' (copper), referring to its copper content; formerly called copper glance or chalcosine",
+    "associations": [
+      "Bornite",
+      "Covellite",
+      "Chalcopyrite",
+      "Malachite",
+      "Azurite"
+    ],
+    "habit": "Short prismatic or tabular pseudo-hexagonal crystals; typically massive, granular, or as replacements in supergene enrichment zones"
   },
   {
     "name": "Bornite",
@@ -1092,7 +1740,16 @@
     "funFact": "Called 'Peacock Ore' due to the brilliant iridescent tarnish it develops.",
     "mindatUrl": "https://www.mindat.org/min-727.html",
     "wikiTitle": "Bornite",
-    "nerdFact": "Bornite's iridescent tarnish — the 'peacock ore' effect — is a thin-film interference phenomenon, exactly like a soap bubble or an oil slick. The interference color shifts as the oxide film thickens over time, meaning freshly broken bornite is bronze-brown, and the rainbow colors develop only after exposure to air."
+    "nerdFact": "Bornite's iridescent tarnish — the 'peacock ore' effect — is a thin-film interference phenomenon, exactly like a soap bubble or an oil slick. The interference color shifts as the oxide film thickens over time, meaning freshly broken bornite is bronze-brown, and the rainbow colors develop only after exposure to air.",
+    "etymology": "Named in 1845 after Ignaz von Born, an 18th-century Austrian mineralogist and metallurgist who classified minerals systematically",
+    "associations": [
+      "Chalcocite",
+      "Chalcopyrite",
+      "Pyrite",
+      "Malachite",
+      "Chrysocolla"
+    ],
+    "habit": "Cubic, dodecahedral, or octahedral crystals rare; usually massive or granular; fresh surfaces bronze-brown, tarnishing to iridescent purple-blue"
   },
   {
     "name": "Chalcopyrite",
@@ -1107,7 +1764,16 @@
     "funFact": "The most important copper ore; often resembles pyrite but is softer.",
     "mindatUrl": "https://www.mindat.org/min-955.html",
     "wikiTitle": "Chalcopyrite",
-    "nerdFact": "Chalcopyrite is the most important copper mineral in the world — over 70% of all copper ever mined came from chalcopyrite-bearing porphyry copper deposits. Yet it is thermodynamically unstable at Earth's surface and should not exist — it persists only because its oxidation is kinetically sluggish in the absence of acidic groundwater."
+    "nerdFact": "Chalcopyrite is the most important copper mineral in the world — over 70% of all copper ever mined came from chalcopyrite-bearing porphyry copper deposits. Yet it is thermodynamically unstable at Earth's surface and should not exist — it persists only because its oxidation is kinetically sluggish in the absence of acidic groundwater.",
+    "etymology": "From Greek 'chalkos' (copper) + 'pyrites' (fire stone), meaning copper pyrite — it was historically called yellow copper ore",
+    "associations": [
+      "Pyrite",
+      "Sphalerite",
+      "Galena",
+      "Bornite",
+      "Quartz"
+    ],
+    "habit": "Disphenoidal crystals often resembling tetrahedra; commonly massive or granular; characteristic brassy yellow colour, often with iridescent tarnish"
   },
   {
     "name": "Covellite",
@@ -1122,7 +1788,16 @@
     "funFact": "A striking indigo-blue mineral; it was the first natural superconductor discovered.",
     "mindatUrl": "https://www.mindat.org/min-1144.html",
     "wikiTitle": "Covellite",
-    "nerdFact": "Covellite has a layered structure in which Cu-S bonds alternate between tetrahedral and trigonal planar coordination within the same unit cell — a structural oddity that gives it metallic conductivity along the layers while being nearly insulating perpendicular to them. It was the first mineral proved to be superconducting, below 1.6 K."
+    "nerdFact": "Covellite has a layered structure in which Cu-S bonds alternate between tetrahedral and trigonal planar coordination within the same unit cell — a structural oddity that gives it metallic conductivity along the layers while being nearly insulating perpendicular to them. It was the first mineral proved to be superconducting, below 1.6 K.",
+    "etymology": "Named in 1832 after Nicola Covelli, an Italian mineralogist who discovered it in volcanic deposits on Mount Vesuvius",
+    "associations": [
+      "Chalcocite",
+      "Bornite",
+      "Chalcopyrite",
+      "Pyrite",
+      "Enargite"
+    ],
+    "habit": "Hexagonal platy crystals with perfect basal cleavage; typically as thin plates or foliated masses; indigo-blue colour unmistakable"
   },
   {
     "name": "Arsenopyrite",
@@ -1137,7 +1812,16 @@
     "funFact": "Releases a strong garlic-like odor when struck or heated.",
     "mindatUrl": "https://www.mindat.org/min-305.html",
     "wikiTitle": "Arsenopyrite",
-    "nerdFact": "Arsenopyrite's Fe:As:S ratio varies systematically with the temperature of formation — a phenomenon called arsenopyrite geothermometry. By measuring the As content with an electron microprobe, geologists can determine the exact temperature (within ±10°C) at which a hydrothermal ore deposit formed, sometimes hundreds of millions of years ago."
+    "nerdFact": "Arsenopyrite's Fe:As:S ratio varies systematically with the temperature of formation — a phenomenon called arsenopyrite geothermometry. By measuring the As content with an electron microprobe, geologists can determine the exact temperature (within ±10°C) at which a hydrothermal ore deposit formed, sometimes hundreds of millions of years ago.",
+    "etymology": "From Greek 'arsenikon' (arsenic, from 'arsenikos' meaning virile or potent) + 'pyrites' (fire stone); formerly called mispickel",
+    "associations": [
+      "Pyrite",
+      "Pyrrhotite",
+      "Gold",
+      "Chalcopyrite",
+      "Stibnite"
+    ],
+    "habit": "Prismatic crystals with characteristic wedge-shaped cross-section; cruciform and star-shaped twins; also massive or granular"
   },
   {
     "name": "Pentlandite",
@@ -1152,7 +1836,16 @@
     "funFact": "The principal ore of nickel, often found with pyrrhotite and chalcopyrite.",
     "mindatUrl": "https://www.mindat.org/min-3155.html",
     "wikiTitle": "Pentlandite",
-    "nerdFact": "Pentlandite is the reason the Sudbury Basin in Ontario is the world's largest nickel deposit — a 1.85 billion-year-old meteorite impact melted the crust, and the impact melt incorporated mantle-derived sulfides that concentrated as pentlandite as it cooled. The same impact deposited enough platinum-group metals to supply ~20% of the world's annual platinum production."
+    "nerdFact": "Pentlandite is the reason the Sudbury Basin in Ontario is the world's largest nickel deposit — a 1.85 billion-year-old meteorite impact melted the crust, and the impact melt incorporated mantle-derived sulfides that concentrated as pentlandite as it cooled. The same impact deposited enough platinum-group metals to supply ~20% of the world's annual platinum production.",
+    "etymology": "Named in 1856 after Joseph Barclay Pentland, an Irish naturalist and traveller who collected specimens in the Andes",
+    "associations": [
+      "Pyrrhotite",
+      "Chalcopyrite",
+      "Magnetite",
+      "Pyrite",
+      "Millerite"
+    ],
+    "habit": "Rarely as crystals; typically massive granular; almost always intergrown with pyrrhotite as flame-like exsolution blebs"
   },
   {
     "name": "Pyrrhotite",
@@ -1167,7 +1860,16 @@
     "funFact": "Known as 'magnetic pyrite' because it is weakly to strongly magnetic.",
     "mindatUrl": "https://www.mindat.org/min-3328.html",
     "wikiTitle": "Pyrrhotite",
-    "nerdFact": "Pyrrhotite's variable iron deficiency (Fe₁₋ₓS, where x = 0 to 0.125) is not random — the vacancies order themselves into specific crystallographic superstructures at different compositions. The monoclinic 4C superstructure (Fe₇S₈) is the most magnetic variety, while the hexagonal polymorph with x near 0 is nearly non-magnetic."
+    "nerdFact": "Pyrrhotite's variable iron deficiency (Fe₁₋ₓS, where x = 0 to 0.125) is not random — the vacancies order themselves into specific crystallographic superstructures at different compositions. The monoclinic 4C superstructure (Fe₇S₈) is the most magnetic variety, while the hexagonal polymorph with x near 0 is nearly non-magnetic.",
+    "etymology": "From Greek 'pyrrhos' (flame-coloured, reddish), referring to its bronze to reddish-brown colour on fresh surfaces",
+    "associations": [
+      "Pentlandite",
+      "Chalcopyrite",
+      "Pyrite",
+      "Magnetite",
+      "Arsenopyrite"
+    ],
+    "habit": "Tabular to platy hexagonal crystals; commonly massive; characteristic bronze colour with magnetic properties distinguishing it from pyrite"
   },
   {
     "name": "Cinnabar",
@@ -1182,7 +1884,16 @@
     "funFact": "The main ore of mercury and the source of the bright red pigment 'vermilion'.",
     "mindatUrl": "https://www.mindat.org/min-1052.html",
     "wikiTitle": "Cinnabar",
-    "nerdFact": "Cinnabar is the only common mineral where the metal atom (Hg²⁺) sits in a linear two-coordination — bonded to just two sulfur atoms, 180° apart — rather than the more common tetrahedral or octahedral arrangements. This unusual geometry arises from the relativistic stabilization of Hg's 6s electrons, the same quantum effect that makes mercury liquid at room temperature."
+    "nerdFact": "Cinnabar is the only common mineral where the metal atom (Hg²⁺) sits in a linear two-coordination — bonded to just two sulfur atoms, 180° apart — rather than the more common tetrahedral or octahedral arrangements. This unusual geometry arises from the relativistic stabilization of Hg's 6s electrons, the same quantum effect that makes mercury liquid at room temperature.",
+    "etymology": "From Greek 'kinnabari', possibly from Arabic 'zinjifra' or Persian 'zinjifrah', meaning dragon's blood — the red pigment vermilion",
+    "associations": [
+      "Native Mercury",
+      "Pyrite",
+      "Marcasite",
+      "Stibnite",
+      "Realgar"
+    ],
+    "habit": "Rhombohedral crystals; penetration twins forming characteristic swastika-like shapes; also granular, massive, or as coatings on host rock"
   },
   {
     "name": "Stibnite",
@@ -1197,7 +1908,16 @@
     "funFact": "Forms spectacular long, sword-like gray crystals; the main ore of antimony.",
     "mindatUrl": "https://www.mindat.org/min-3782.html",
     "wikiTitle": "Stibnite",
-    "nerdFact": "Stibnite was ground into kohl — the black eye cosmetic used across the ancient Middle East, Egypt, and Rome. The antimony in stibnite may have had actual medicinal benefit: Sb³⁺ is toxic to Leishmania and other eye parasites, and epidemiological evidence suggests kohl users had lower rates of certain eye infections."
+    "nerdFact": "Stibnite was ground into kohl — the black eye cosmetic used across the ancient Middle East, Egypt, and Rome. The antimony in stibnite may have had actual medicinal benefit: Sb³⁺ is toxic to Leishmania and other eye parasites, and epidemiological evidence suggests kohl users had lower rates of certain eye infections.",
+    "etymology": "From Latin 'stibium' (antimony), which derives from Greek 'stimmi' or 'stibi' — possibly from Arabic or Egyptian, referring to kohl eye cosmetic",
+    "associations": [
+      "Cinnabar",
+      "Arsenopyrite",
+      "Realgar",
+      "Orpiment",
+      "Quartz"
+    ],
+    "habit": "Long striated prismatic crystals, often bent or curved; radiating groups; characteristic lead-grey colour with brilliant metallic lustre"
   },
   {
     "name": "Pyrite",
@@ -1212,7 +1932,16 @@
     "funFact": "Called 'Fool's Gold' because its brassy color resembles gold.",
     "mindatUrl": "https://www.mindat.org/min-3314.html",
     "wikiTitle": "Pyrite",
-    "nerdFact": "Pyrite is semiconducting and has a bandgap of ~0.95 eV, close to the theoretical optimum for solar energy conversion (~1.1 eV). Researchers periodically revive interest in pyrite solar cells because the raw material is essentially free and globally abundant — but surface defect states that act as recombination centers have so far prevented efficiencies above a few percent."
+    "nerdFact": "Pyrite is semiconducting and has a bandgap of ~0.95 eV, close to the theoretical optimum for solar energy conversion (~1.1 eV). Researchers periodically revive interest in pyrite solar cells because the raw material is essentially free and globally abundant — but surface defect states that act as recombination centers have so far prevented efficiencies above a few percent.",
+    "etymology": "From Greek 'pyrites lithos' (fire stone), because it produces sparks when struck with steel; used to start fires since prehistoric times",
+    "associations": [
+      "Chalcopyrite",
+      "Sphalerite",
+      "Galena",
+      "Quartz",
+      "Calcite"
+    ],
+    "habit": "Perfect cubic crystals with striated faces; also pyritohedra (12-faced) and octahedra; framboidal aggregates in sediments; massive"
   },
   {
     "name": "Marcasite",
@@ -1227,6 +1956,15 @@
     "funFact": "Also called 'white iron pyrite'; it often forms cockscomb crystal aggregates.",
     "mindatUrl": "https://www.mindat.org/min-2571.html",
     "wikiTitle": "Marcasite",
-    "nerdFact": "Marcasite is metastable relative to pyrite under all surface conditions and converts to pyrite irreversibly over geological time. Museum specimens of marcasite are notoriously unstable — they spontaneously oxidize and produce sulfuric acid, which attacks the specimen itself and the label below it. Curators call this 'pyrite disease' even though marcasite is usually the culprit."
+    "nerdFact": "Marcasite is metastable relative to pyrite under all surface conditions and converts to pyrite irreversibly over geological time. Museum specimens of marcasite are notoriously unstable — they spontaneously oxidize and produce sulfuric acid, which attacks the specimen itself and the label below it. Curators call this 'pyrite disease' even though marcasite is usually the culprit.",
+    "etymology": "From Arabic or Medieval Latin 'marcasita', a term applied to pyrite and similar minerals in the medieval period; the name has uncertain older origins",
+    "associations": [
+      "Pyrite",
+      "Sphalerite",
+      "Galena",
+      "Calcite",
+      "Siderite"
+    ],
+    "habit": "Tabular crystals; characteristic cockscomb and spear-shaped twins; also stalactitic, nodular, or as replacements of fossils (pyrite disease)"
   }
 ]
